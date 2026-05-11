@@ -122,10 +122,10 @@ html.sidebar-pre-collapsed #quartz-body {
   .sidebar.left {
     position: fixed !important;
     top: 0 !important;
-    left: -300px !important;
+    left: -340px !important;
     height: 100vh !important;
     height: 100dvh !important;  // 모바일 브라우저 주소창 대응
-    width: 280px !important;
+    width: 320px !important;
     min-width: 0 !important;
     max-width: none !important;
     z-index: 200 !important;
@@ -154,7 +154,7 @@ html.sidebar-pre-collapsed #quartz-body {
   html.sidebar-pre-collapsed #quartz-body .sidebar.left {
     height: 100vh !important;
     height: 100dvh !important;
-    width: 280px !important;
+    width: 320px !important;
     .profile-container { display: flex !important; }
     .search            { display: block !important; }
     .explorer          { display: block !important; }

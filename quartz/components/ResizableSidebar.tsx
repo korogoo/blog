@@ -85,12 +85,13 @@ function ResizableSidebar() {
       }
     };
 
-    // 백드롭 생성 (1회)
-    if (!document.querySelector('.mobile-sidebar-backdrop')) {
+    // 백드롭 생성 (1회) - #quartz-body 자식으로 추가해야 CSS 셀렉터 매칭됨
+    const quartzBody = document.getElementById('quartz-body');
+    if (quartzBody && !quartzBody.querySelector('.mobile-sidebar-backdrop')) {
       const backdrop = document.createElement('div');
       backdrop.className = 'mobile-sidebar-backdrop';
       backdrop.onclick = closeMobileSidebar;
-      document.body.appendChild(backdrop);
+      quartzBody.appendChild(backdrop);
     }
 
     // Escape 키 (중복 방지)
