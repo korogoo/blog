@@ -6,7 +6,8 @@ function ResizableSidebar() {
       dangerouslySetInnerHTML={{
         __html: `
 (function() {
-  const STORAGE_KEY = "sidebar-width";
+  const WIDTH_KEY = "sidebar-width";
+  const COLLAPSED_KEY = "sidebar-collapsed";
   const MIN_WIDTH = 180;
   const MAX_WIDTH = 560;
 
@@ -14,15 +15,47 @@ function ResizableSidebar() {
     document.documentElement.style.setProperty("--sidebar-width", width + "px");
   }
 
+  function setCollapsed(collapsed) {
+    const body = document.getElementById("quartz-body");
+    const btn = document.querySelector(".sidebar-toggle-btn");
+    if (!body || !btn) return;
+    if (collapsed) {
+      body.classList.add("sidebar-collapsed");
+      btn.textContent = "▶";
+      btn.style.left = "0.5rem";
+    } else {
+      body.classList.remove("sidebar-collapsed");
+      btn.textContent = "☰";
+      btn.style.left = "1rem";
+    }
+    localStorage.setItem(COLLAPSED_KEY, collapsed ? "1" : "0");
+  }
+
   function init() {
     const sidebar = document.querySelector(".sidebar.left");
     if (!sidebar) return;
 
-    const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) applyWidth(parseInt(saved));
+    const savedWidth = localStorage.getItem(WIDTH_KEY);
+    if (savedWidth) applyWidth(parseInt(savedWidth));
 
+    // 토글 버튼 생성
+    if (!document.querySelector(".sidebar-toggle-btn")) {
+      const btn = document.createElement("button");
+      btn.className = "sidebar-toggle-btn";
+      btn.textContent = "☰";
+      btn.setAttribute("aria-label", "사이드바 열기/닫기");
+      btn.addEventListener("click", function() {
+        const collapsed = document.getElementById("quartz-body").classList.contains("sidebar-collapsed");
+        setCollapsed(!collapsed);
+      });
+      document.body.appendChild(btn);
+    }
+
+    const collapsed = localStorage.getItem(COLLAPSED_KEY) === "1";
+    setCollapsed(collapsed);
+
+    // 리사이즈 핸들
     if (sidebar.querySelector(".sidebar-resize-handle")) return;
-
     const handle = document.createElement("div");
     handle.className = "sidebar-resize-handle";
     sidebar.appendChild(handle);
@@ -39,7 +72,7 @@ function ResizableSidebar() {
 
       function onUp() {
         const w = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--sidebar-width"));
-        localStorage.setItem(STORAGE_KEY, w);
+        localStorage.setItem(WIDTH_KEY, w);
         document.removeEventListener("mousemove", onMove);
         document.removeEventListener("mouseup", onUp);
       }

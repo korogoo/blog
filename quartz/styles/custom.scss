@@ -9,43 +9,46 @@
   grid-template-columns: var(--sidebar-width) auto var(--sidebar-width) !important;
 }
 
+#quartz-body.sidebar-collapsed {
+  grid-template-columns: 0px auto var(--sidebar-width) !important;
+}
+
 .sidebar.left {
   width: var(--sidebar-width);
   min-width: 180px;
   max-width: 560px;
   position: relative;
+  transition: width 0.2s ease;
+  overflow: hidden;
 }
 
-// 커스텀 체크박스 아이콘
-$task-icons: (
-  "!":  ("⚠", #e5a00d),
-  "I":  ("ℹ", #4a9eff),
-  "i":  ("ℹ", #4a9eff),
-  ">":  ("→", #a78bfa),
-  "\"": ("❝", #94a3b8),
-  "?":  ("？", #f472b6),
-  "p":  ("＋", #4ade80),
-  "c":  ("✗", #f87171),
-  "*":  ("★", #fbbf24),
-);
+#quartz-body.sidebar-collapsed .sidebar.left {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+}
 
-@each $task, $values in $task-icons {
-  $symbol: nth($values, 1);
-  $color: nth($values, 2);
+// 사이드바 토글 버튼
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--darkgray);
+  transition: background 0.15s, left 0.2s ease;
 
-  li.task-list-item[data-task="#{$task}"] {
-    list-style: none;
-
-    > input[type="checkbox"] {
-      display: none;
-    }
-
-    &::before {
-      content: "#{$symbol}";
-      color: $color;
-      margin-right: 0.4em;
-      font-style: normal;
-    }
+  &:hover {
+    background: var(--lightgray);
   }
 }
 
@@ -64,6 +67,28 @@ $task-icons: (
     background: var(--lightgray);
   }
 }
+
+// 커스텀 체크박스 아이콘
+@mixin task-icon($symbol, $color) {
+  list-style: none;
+  > input[type="checkbox"] { display: none; }
+  &::before {
+    content: $symbol;
+    color: $color;
+    margin-right: 0.4em;
+    font-style: normal;
+  }
+}
+
+li.task-list-item[data-task="!"]  { @include task-icon("⚠", #e5a00d); }
+li.task-list-item[data-task="I"]  { @include task-icon("ℹ", #4a9eff); }
+li.task-list-item[data-task="i"]  { @include task-icon("ℹ", #4a9eff); }
+li.task-list-item[data-task=">"]  { @include task-icon("→", #a78bfa); }
+li.task-list-item[data-task='"']  { @include task-icon("❝", #94a3b8); }
+li.task-list-item[data-task="?"]  { @include task-icon("？", #f472b6); }
+li.task-list-item[data-task="p"]  { @include task-icon("＋", #4ade80); }
+li.task-list-item[data-task="c"]  { @include task-icon("✗", #f87171); }
+li.task-list-item[data-task="*"]  { @include task-icon("★", #fbbf24); }
 
 @font-face {
   font-family: 'SchoolSafeDictation';
