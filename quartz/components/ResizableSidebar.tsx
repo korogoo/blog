@@ -60,10 +60,11 @@ function ResizableSidebar() {
 
     handle.addEventListener('mousedown', function(e) {
       e.preventDefault();
-      const startX = e.clientX;
+      const startY = e.clientY;
       const startWidth = sidebar.getBoundingClientRect().width;
       function onMove(e) {
-        const w = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, startWidth + e.clientX - startX));
+        const delta = startY - e.clientY;
+        const w = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, startWidth + delta));
         applyWidth(w);
       }
       function onUp() {

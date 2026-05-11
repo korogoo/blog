@@ -5,35 +5,70 @@
   --sidebar-width: 320px;
 }
 
+// 오른쪽 사이드바 제거 + 가운데 정렬
 #quartz-body {
-  grid-template-columns: var(--sidebar-width) auto var(--sidebar-width) !important;
+  grid-template-columns: var(--sidebar-width) minmax(0, 860px) !important;
+  justify-content: center;
 }
 
 #quartz-body.sidebar-collapsed {
-  grid-template-columns: 0px auto var(--sidebar-width) !important;
+  grid-template-columns: 0px minmax(0, 860px) !important;
 }
 
+// 왼쪽 사이드바
 .sidebar.left {
   width: var(--sidebar-width);
-  min-width: 180px;
+  min-width: 0;
   max-width: 560px;
   position: relative;
   transition: width 0.2s ease;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+// 사이드바 너비 조절 핸들 (스크롤 영역 하단)
+.sidebar-resize-handle {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  cursor: row-resize;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    width: 2rem;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--lightgray);
+    opacity: 0.5;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    background: var(--gray);
+  }
 }
 
 #quartz-body.sidebar-collapsed .sidebar.left {
   width: 0;
-  min-width: 0;
   padding: 0;
 }
 
 // 커스텀 태스크 아이콘 (Lucide SVG)
 @mixin task-icon($svg) {
-  list-style: none;
-  display: flex;
+  list-style: none !important;
+  display: flex !important;
   align-items: flex-start;
   gap: 0.4em;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
   &::before {
     content: '';
     flex-shrink: 0;
@@ -44,6 +79,11 @@
     background-repeat: no-repeat;
     background-size: contain;
   }
+}
+
+// task 아이콘 사용하는 ul 들여쓰기 제거
+ul:has(li[data-task]) {
+  padding-left: 0;
 }
 
 // [!] important - alert-triangle
@@ -75,8 +115,10 @@ li[data-task="*"] { @include task-icon("data:image/svg+xml,%3Csvg xmlns='http://
 
 // 본문 영역 여백
 #quartz-center {
-  padding-left: 6rem;
+  padding-left: 2rem;
   padding-right: 2rem;
+  max-width: 860px;
+  width: 100%;
 }
 
 // 왼쪽 사이드바 항목 간격
