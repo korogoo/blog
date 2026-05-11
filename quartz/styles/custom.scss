@@ -108,7 +108,7 @@ html.sidebar-pre-collapsed #quartz-body {
 #quartz-body > footer {
   margin-left: calc(var(--sidebar-width) + 4rem) !important;
   margin-right: 0 !important;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   box-sizing: border-box;
 }
 
