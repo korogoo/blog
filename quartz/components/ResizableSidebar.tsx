@@ -6,38 +6,6 @@ function ResizableSidebar() {
       dangerouslySetInnerHTML={{
         __html: `
 (function() {
-  // ── 커스텀 체크박스 아이콘 ──────────────────────────────────────────
-  const TASK_ICONS = {
-    '!': { symbol: '⚠', color: '#e5a00d' },
-    'I': { symbol: 'ℹ', color: '#4a9eff' },
-    'i': { symbol: 'ℹ', color: '#4a9eff' },
-    '>': { symbol: '→', color: '#a78bfa' },
-    '"': { symbol: '❝', color: '#94a3b8' },
-    '?': { symbol: '？', color: '#f472b6' },
-    'p': { symbol: '＋', color: '#4ade80' },
-    'c': { symbol: '✗', color: '#f87171' },
-    '*': { symbol: '★', color: '#fbbf24' },
-  };
-
-  function processTaskIcons() {
-    document.querySelectorAll('.page article li').forEach(function(li) {
-      if (li.dataset.taskProcessed) return;
-      const first = li.firstChild;
-      if (!first || first.nodeType !== Node.TEXT_NODE) return;
-      const match = first.textContent.match(/^\\[([!Ii>"?pc*])\\]\\s?/);
-      if (!match) return;
-      const icon = TASK_ICONS[match[1]];
-      if (!icon) return;
-      li.dataset.taskProcessed = '1';
-      li.style.listStyle = 'none';
-      first.textContent = first.textContent.slice(match[0].length);
-      const span = document.createElement('span');
-      span.style.cssText = 'color:' + icon.color + ';margin-right:0.4em;';
-      span.textContent = icon.symbol;
-      li.insertBefore(span, li.firstChild);
-    });
-  }
-
   // ── 사이드바 리사이즈 & 토글 ───────────────────────────────────────
   const WIDTH_KEY = 'sidebar-width';
   const COLLAPSED_KEY = 'sidebar-collapsed';
@@ -65,8 +33,6 @@ function ResizableSidebar() {
   }
 
   function init() {
-    processTaskIcons();
-
     const sidebar = document.querySelector('.sidebar.left');
     if (!sidebar) return;
 

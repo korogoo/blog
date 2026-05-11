@@ -674,6 +674,39 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
         })
       }
 
+      // custom task list icons
+      plugins.push(() => {
+        const CUSTOM_TASKS: Record<string, string> = {
+          "!": "important", ">": "forwarded", '"': "quote",
+          "i": "info", "I": "idea", "?": "question",
+          "p": "pros", "c": "cons", "*": "star",
+          "/": "incomplete", "-": "canceled", "<": "scheduling",
+          "l": "location", "b": "bookmark", "S": "savings",
+          "f": "fire", "k": "key", "w": "win", "u": "up", "d": "down",
+        }
+        return (tree: HtmlRoot) => {
+          visit(tree, "element", (node: Element) => {
+            if (node.tagName !== "li") return
+            const first = node.children[0]
+            if (!first) return
+            let textNode: any = null
+            if (first.type === "text") {
+              textNode = first
+            } else if (first.type === "element" && (first as Element).tagName === "p") {
+              const pFirst = (first as Element).children[0]
+              if (pFirst?.type === "text") textNode = pFirst
+            }
+            if (!textNode) return
+            const match = textNode.value.match(/^\[([^\]]{1})\]\s?/)
+            if (!match) return
+            const char = match[1]
+            if (!CUSTOM_TASKS[char]) return
+            node.properties = { ...node.properties, "data-task": char }
+            textNode.value = textNode.value.slice(match[0].length)
+          })
+        }
+      })
+
       if (opts.mermaid) {
         plugins.push(() => {
           return (tree: HtmlRoot, _file) => {
