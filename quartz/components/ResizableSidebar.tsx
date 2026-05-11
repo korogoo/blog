@@ -1,5 +1,10 @@
 import { QuartzComponentConstructor } from "./types"
 
+const darkmodeInit = `
+localStorage.setItem("theme", "dark");
+document.documentElement.setAttribute("saved-theme", "dark");
+`
+
 function ResizableSidebar() {
   return (
     <script
@@ -33,8 +38,7 @@ function ResizableSidebar() {
   }
 
   function init() {
-    const sidebar = document.querySelector('.sidebar.left');
-    if (!sidebar) return;
+    if (!document.querySelector('.sidebar.left')) return;
 
     const savedWidth = localStorage.getItem(WIDTH_KEY);
     if (savedWidth) applyWidth(parseInt(savedWidth));
@@ -53,6 +57,7 @@ function ResizableSidebar() {
 
     setCollapsed(localStorage.getItem(COLLAPSED_KEY) === '1');
 
+    // 핸들은 CSS에서 left: var(--sidebar-width)로 자동 추적됨
     let handle = document.querySelector('.sidebar-resize-handle');
     if (!handle) {
       handle = document.createElement('div');
@@ -60,22 +65,19 @@ function ResizableSidebar() {
       document.body.appendChild(handle);
     }
 
-    function updateHandlePosition() {
-      const rect = sidebar.getBoundingClientRect();
-      handle.style.left = (rect.right) + 'px';
-    }
-    updateHandlePosition();
-
     handle.addEventListener('mousedown', function(e) {
       e.preventDefault();
+      handle.classList.add('dragging');
       const startX = e.clientX;
-      const startWidth = sidebar.getBoundingClientRect().width;
+      const startWidth = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width')
+      );
       function onMove(e) {
         const w = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, startWidth + e.clientX - startX));
         applyWidth(w);
-        updateHandlePosition();
       }
       function onUp() {
+        handle.classList.remove('dragging');
         const w = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width'));
         localStorage.setItem(WIDTH_KEY, w);
         document.removeEventListener('mousemove', onMove);
@@ -94,5 +96,7 @@ function ResizableSidebar() {
     />
   )
 }
+
+ResizableSidebar.beforeDOMLoaded = darkmodeInit
 
 export default (() => ResizableSidebar) satisfies QuartzComponentConstructor
