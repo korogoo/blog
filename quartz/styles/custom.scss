@@ -1,5 +1,37 @@
 @use "./base.scss";
 
+// 사이드바 드래그 리사이즈
+:root {
+  --sidebar-width: 320px;
+}
+
+#quartz-body {
+  grid-template-columns: var(--sidebar-width) auto var(--sidebar-width) !important;
+}
+
+.sidebar.left {
+  width: var(--sidebar-width);
+  min-width: 180px;
+  max-width: 560px;
+  position: relative;
+}
+
+.sidebar-resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 0.2s;
+  z-index: 10;
+
+  &:hover {
+    background: var(--lightgray);
+  }
+}
+
 @font-face {
   font-family: 'SchoolSafeDictation';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimBadasseugiTTF-L.woff2') format('woff2');
