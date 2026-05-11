@@ -12,12 +12,12 @@ Profile.css = `
 .profile-container {
   display: flex;
   justify-content: center;
-  padding: 1.5rem 1rem 0.5rem;
+  padding: 0.4rem 0 0.4rem;
 }
 
 .profile-image {
-  width: 80px;
-  height: 80px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--lightgray);

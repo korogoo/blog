@@ -25,15 +25,16 @@
   z-index: 100;
   background: var(--light);
   border-right: 1px solid var(--lightgray);
+  padding: 1rem !important;  // 기본 6rem 패딩 절반 이하로
 
   &::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
   }
   &::-webkit-scrollbar-track {
-    background: var(--lightgray);
+    background: var(--light);
   }
   &::-webkit-scrollbar-thumb {
-    background: var(--gray);
+    background: var(--lightgray);
     border-radius: 3px;
   }
 }
@@ -58,9 +59,10 @@
   box-sizing: border-box;
 }
 
+// 사이드바 접힘 - 토글 버튼(~2.5rem) + 동일한 3rem 여백
 #quartz-body.sidebar-collapsed .center {
   margin-left: 0 !important;
-  padding-left: 4rem;
+  padding-left: 3rem;
 }
 
 // 리사이즈 핸들 - CSS 변수로 위치 자동 추적
