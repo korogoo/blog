@@ -28,11 +28,9 @@ function ResizableSidebar() {
     if (collapsed) {
       body.classList.add('sidebar-collapsed');
       btn.textContent = '▶';
-      btn.style.left = '0.5rem';
     } else {
       body.classList.remove('sidebar-collapsed');
       btn.textContent = '☰';
-      btn.style.left = '1rem';
     }
     localStorage.setItem(COLLAPSED_KEY, collapsed ? '1' : '0');
   }

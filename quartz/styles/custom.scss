@@ -39,9 +39,18 @@
   }
 }
 
+// 접힘 상태 - CSS 변수만 바꾸면 핸들·본문·사이드바 모두 자동 반응
+#quartz-body.sidebar-collapsed {
+  --sidebar-width: 110px;
+}
+
 #quartz-body.sidebar-collapsed .sidebar.left {
-  width: 0 !important;
-  border-right: none;
+  // profile, search, explorer 숨기고 Korogoo만 표시
+  .profile-container,
+  .search,
+  .explorer {
+    display: none !important;
+  }
 }
 
 // 오른쪽 사이드바 숨김
@@ -59,10 +68,12 @@
   box-sizing: border-box;
 }
 
-// 사이드바 접힘 - 토글 버튼 오른쪽 여백 확보
-#quartz-body.sidebar-collapsed .center {
-  margin-left: 0 !important;
-  padding-left: 5rem;
+// footer도 sidebar 너비만큼 밀기
+#quartz-body > footer {
+  margin-left: var(--sidebar-width) !important;
+  margin-right: 0 !important;
+  padding: 1rem 2rem 1rem 3rem;
+  box-sizing: border-box;
 }
 
 // 리사이즈 핸들 - CSS 변수로 위치 자동 추적
