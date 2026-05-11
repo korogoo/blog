@@ -1,5 +1,9 @@
 @use "./base.scss";
 
+// 인라인 코드 색상 완화 (--dark #eceff4 → --darkgray #c1cbd1)
+:not(pre) > code {
+  color: var(--darkgray) !important;
+}
 
 // 사이드바 드래그 리사이즈
 :root {
