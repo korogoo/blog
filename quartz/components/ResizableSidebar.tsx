@@ -53,8 +53,14 @@ function ResizableSidebar() {
       btn.textContent = '☰';
       btn.setAttribute('aria-label', '사이드바 열기/닫기');
       btn.addEventListener('click', function() {
-        const collapsed = document.getElementById('quartz-body').classList.contains('sidebar-collapsed');
-        setCollapsed(!collapsed);
+        const body = document.getElementById('quartz-body');
+        const isMobile = window.innerWidth <= 800;
+        if (isMobile) {
+          body.classList.toggle('mobile-sidebar-open');
+        } else {
+          const collapsed = body.classList.contains('sidebar-collapsed');
+          setCollapsed(!collapsed);
+        }
       });
       document.body.appendChild(btn);
     }

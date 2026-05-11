@@ -112,6 +112,86 @@ html.sidebar-pre-collapsed #quartz-body {
   box-sizing: border-box;
 }
 
+// ── 반응형 ──────────────────────────────────────────────────────────────
+
+// 태블릿(≤1200px): 사이드바 자동 접힘 상태로
+@media (max-width: 1200px) {
+  :root {
+    --sidebar-width: 52px;
+  }
+
+  .sidebar.left {
+    .profile-container,
+    .search,
+    .explorer {
+      display: none !important;
+    }
+
+    .page-title {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      margin-top: 4rem;
+      font-size: 1rem;
+      white-space: nowrap;
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .sidebar-resize-handle {
+    display: none !important;
+  }
+}
+
+// 모바일(≤800px): 사이드바 숨김, 본문 전체 너비
+@media (max-width: 800px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  .sidebar.left {
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    width: 280px !important;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.4);
+
+    .profile-container,
+    .search,
+    .explorer {
+      display: flex !important;
+    }
+
+    .page-title {
+      writing-mode: initial !important;
+      transform: none !important;
+      margin-top: 0 !important;
+      font-size: 1.75rem !important;
+    }
+  }
+
+  // 모바일 사이드바 열림
+  #quartz-body.mobile-sidebar-open .sidebar.left {
+    transform: translateX(0);
+  }
+
+  #quartz-body .center,
+  #quartz-body > footer {
+    margin-left: 1rem !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+  }
+
+  .sidebar-toggle-btn {
+    left: 0.5rem !important;
+  }
+
+  .sidebar-resize-handle {
+    display: none !important;
+  }
+}
+
 // 리사이즈 핸들 - CSS 변수로 위치 자동 추적
 .sidebar-resize-handle {
   position: fixed;
