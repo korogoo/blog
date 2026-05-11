@@ -5,6 +5,18 @@
   color: var(--darkgray) !important;
 }
 
+// 본문 텍스트 줄바꿈 - 긴 단어/URL이 화면 밖으로 넘어가지 않도록
+article {
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  // 이미지, 동영상이 컨테이너 폭을 초과하지 않도록
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 // 사이드바 드래그 리사이즈
 :root {
   --sidebar-width: 280px;
