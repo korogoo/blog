@@ -1,18 +1,5 @@
 @use "./base.scss";
 
-// 다크모드 강제 고정
-:root[saved-theme="light"],
-:root {
-  --light: #22262e;
-  --lightgray: #2e3440;
-  --gray: #4c566a;
-  --darkgray: #c1cbd1;
-  --dark: #eceff4;
-  --secondary: #c1cbd1;
-  --tertiary: #89a0ad;
-  --highlight: rgba(193, 203, 209, 0.10);
-  --textHighlight: #c1cbd133;
-}
 
 // 사이드바 드래그 리사이즈
 :root {
