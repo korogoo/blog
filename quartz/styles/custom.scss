@@ -60,18 +60,32 @@
   }
 }
 
-// 접힘 상태 - CSS 변수만 바꾸면 핸들·본문·사이드바 모두 자동 반응
+// 접힘 상태 - 좁은 너비로 변경
 #quartz-body.sidebar-collapsed,
 html.sidebar-pre-collapsed #quartz-body {
-  --sidebar-width: 110px;
+  --sidebar-width: 52px;
 }
 
 #quartz-body.sidebar-collapsed .sidebar.left {
   // profile, search, explorer 숨기고 Korogoo만 표시
+  overflow: visible;
+
   .profile-container,
   .search,
   .explorer {
     display: none !important;
+  }
+
+  // Korogoo 텍스트 세로 회전 + 토글 버튼 아래 배치
+  .page-title {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    margin-top: 4rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+    width: 100%;
   }
 }
 
