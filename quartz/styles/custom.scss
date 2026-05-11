@@ -16,6 +16,39 @@
   position: relative;
 }
 
+// 커스텀 체크박스 아이콘
+$task-icons: (
+  "!":  ("⚠", #e5a00d),
+  "I":  ("ℹ", #4a9eff),
+  "i":  ("ℹ", #4a9eff),
+  ">":  ("→", #a78bfa),
+  "\"": ("❝", #94a3b8),
+  "?":  ("？", #f472b6),
+  "p":  ("＋", #4ade80),
+  "c":  ("✗", #f87171),
+  "*":  ("★", #fbbf24),
+);
+
+@each $task, $values in $task-icons {
+  $symbol: nth($values, 1);
+  $color: nth($values, 2);
+
+  li.task-list-item[data-task="#{$task}"] {
+    list-style: none;
+
+    > input[type="checkbox"] {
+      display: none;
+    }
+
+    &::before {
+      content: "#{$symbol}";
+      color: $color;
+      margin-right: 0.4em;
+      font-style: normal;
+    }
+  }
+}
+
 .sidebar-resize-handle {
   position: absolute;
   top: 0;
