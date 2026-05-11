@@ -53,19 +53,27 @@ function ResizableSidebar() {
 
     setCollapsed(localStorage.getItem(COLLAPSED_KEY) === '1');
 
-    if (sidebar.querySelector('.sidebar-resize-handle')) return;
-    const handle = document.createElement('div');
-    handle.className = 'sidebar-resize-handle';
-    sidebar.appendChild(handle);
+    let handle = document.querySelector('.sidebar-resize-handle');
+    if (!handle) {
+      handle = document.createElement('div');
+      handle.className = 'sidebar-resize-handle';
+      document.body.appendChild(handle);
+    }
+
+    function updateHandlePosition() {
+      const rect = sidebar.getBoundingClientRect();
+      handle.style.left = (rect.right) + 'px';
+    }
+    updateHandlePosition();
 
     handle.addEventListener('mousedown', function(e) {
       e.preventDefault();
-      const startY = e.clientY;
+      const startX = e.clientX;
       const startWidth = sidebar.getBoundingClientRect().width;
       function onMove(e) {
-        const delta = startY - e.clientY;
-        const w = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, startWidth + delta));
+        const w = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, startWidth + e.clientX - startX));
         applyWidth(w);
+        updateHandlePosition();
       }
       function onUp() {
         const w = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width'));
