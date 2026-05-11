@@ -6,6 +6,27 @@
   --sidebar-width: 280px;
 }
 
+// 전역 스크롤바 다크 테마
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray) var(--light);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 3px;
+  &:hover {
+    background: var(--darkgray);
+  }
+}
+
 // 그리드 제거 - 사이드바 fixed로 변경
 #quartz-body {
   display: block !important;
