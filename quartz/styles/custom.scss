@@ -49,16 +49,17 @@
 }
 
 // 본문 영역 - 사이드바 너비만큼 자동으로 밀림
-#quartz-center {
-  margin-left: var(--sidebar-width);
+#quartz-body .center {
+  margin-left: var(--sidebar-width) !important;
+  margin-right: 0 !important;
   max-width: 860px;
+  min-width: 0;
   padding: 2rem 2rem 2rem 3rem;
-  transition: margin-left 0.15s ease;
   box-sizing: border-box;
 }
 
-#quartz-body.sidebar-collapsed #quartz-center {
-  margin-left: 0;
+#quartz-body.sidebar-collapsed .center {
+  margin-left: 0 !important;
   padding-left: 4rem;
 }
 
@@ -130,14 +131,6 @@ li[data-task="c"] { @include task-icon("data:image/svg+xml,%3Csvg xmlns='http://
 
 // [*] star - star
 li[data-task="*"] { @include task-icon("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fbbf24' stroke='%23fbbf24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E"); }
-
-// 본문 영역 여백
-#quartz-center {
-  padding-left: 5rem;
-  padding-right: 2rem;
-  max-width: 860px;
-  width: 100%;
-}
 
 // 왼쪽 사이드바 항목 간격
 .sidebar.left .explorer ul li,
