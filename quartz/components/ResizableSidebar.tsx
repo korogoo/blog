@@ -14,17 +14,22 @@ function ResizableSidebar() {
       dangerouslySetInnerHTML={{
         __html: `
 (function() {
-  // ── 사이드바 리사이즈 & 토글 ───────────────────────────────────────
   const WIDTH_KEY = 'sidebar-width';
   const COLLAPSED_KEY = 'sidebar-collapsed';
   const MIN_WIDTH = 180;
   const MAX_WIDTH = 560;
+  const OVERLAY_BREAKPOINT = 1200;
+
+  function isOverlayMode() {
+    return window.innerWidth <= OVERLAY_BREAKPOINT;
+  }
 
   function applyWidth(width) {
     document.documentElement.style.setProperty('--sidebar-width', width + 'px');
   }
 
   function setCollapsed(collapsed) {
+    if (isOverlayMode()) return;
     const body = document.getElementById('quartz-body');
     const btn = document.querySelector('.sidebar-toggle-btn');
     const handle = document.querySelector('.sidebar-resize-handle');
@@ -41,36 +46,70 @@ function ResizableSidebar() {
     localStorage.setItem(COLLAPSED_KEY, collapsed ? '1' : '0');
   }
 
+  function closeMobileSidebar() {
+    const body = document.getElementById('quartz-body');
+    if (!body) return;
+    body.classList.remove('mobile-sidebar-open');
+    const btn = document.querySelector('.sidebar-toggle-btn');
+    if (btn) btn.textContent = '☰';
+  }
+
   function init() {
     if (!document.querySelector('.sidebar.left')) return;
 
-    const savedWidth = localStorage.getItem(WIDTH_KEY);
-    if (savedWidth) applyWidth(parseInt(savedWidth));
+    // 데스크탑에서만 저장된 너비 적용
+    if (!isOverlayMode()) {
+      const savedWidth = localStorage.getItem(WIDTH_KEY);
+      if (savedWidth) applyWidth(parseInt(savedWidth));
+    }
 
-    if (!document.querySelector('.sidebar-toggle-btn')) {
-      const btn = document.createElement('button');
+    // 토글 버튼 생성 (1회)
+    let btn = document.querySelector('.sidebar-toggle-btn');
+    if (!btn) {
+      btn = document.createElement('button');
       btn.className = 'sidebar-toggle-btn';
       btn.textContent = '☰';
       btn.setAttribute('aria-label', '사이드바 열기/닫기');
-      btn.addEventListener('click', function() {
-        const body = document.getElementById('quartz-body');
-        const isMobile = window.innerWidth <= 800;
-        if (isMobile) {
-          body.classList.toggle('mobile-sidebar-open');
-        } else {
-          const collapsed = body.classList.contains('sidebar-collapsed');
-          setCollapsed(!collapsed);
-        }
-      });
       document.body.appendChild(btn);
     }
+    btn.onclick = function() {
+      const body = document.getElementById('quartz-body');
+      if (isOverlayMode()) {
+        const isOpen = body.classList.contains('mobile-sidebar-open');
+        body.classList.toggle('mobile-sidebar-open');
+        btn.textContent = isOpen ? '☰' : '✕';
+      } else {
+        body.classList.remove('mobile-sidebar-open');
+        const collapsed = body.classList.contains('sidebar-collapsed');
+        setCollapsed(!collapsed);
+      }
+    };
 
-    const isCollapsed = localStorage.getItem(COLLAPSED_KEY) === '1';
-    setCollapsed(isCollapsed);
-    // prescript에서 미리 붙인 클래스 제거 (JS가 이어받음)
+    // 백드롭 생성 (1회)
+    if (!document.querySelector('.mobile-sidebar-backdrop')) {
+      const backdrop = document.createElement('div');
+      backdrop.className = 'mobile-sidebar-backdrop';
+      backdrop.onclick = closeMobileSidebar;
+      document.body.appendChild(backdrop);
+    }
+
+    // Escape 키 (중복 방지)
+    if (!document._sidebarEscAdded) {
+      document._sidebarEscAdded = true;
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeMobileSidebar();
+      });
+    }
+
+    // 데스크탑: 접힘 상태 복원
+    if (!isOverlayMode()) {
+      const isCollapsed = localStorage.getItem(COLLAPSED_KEY) === '1';
+      setCollapsed(isCollapsed);
+    }
+
     document.documentElement.classList.remove('sidebar-pre-collapsed');
 
-    // 핸들은 CSS에서 left: var(--sidebar-width)로 자동 추적됨
+    // 리사이즈 핸들 생성 (1회)
     let handle = document.querySelector('.sidebar-resize-handle');
     if (!handle) {
       handle = document.createElement('div');
@@ -79,6 +118,7 @@ function ResizableSidebar() {
     }
 
     handle.addEventListener('mousedown', function(e) {
+      if (isOverlayMode()) return;
       e.preventDefault();
       handle.classList.add('dragging');
       const startX = e.clientX;

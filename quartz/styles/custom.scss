@@ -112,83 +112,104 @@ html.sidebar-pre-collapsed #quartz-body {
   box-sizing: border-box;
 }
 
-// ── 반응형 ──────────────────────────────────────────────────────────────
-
-// 태블릿(≤1200px): 사이드바 자동 접힘 상태로
+// ── 반응형: 태블릿 + 모바일(≤1200px) 오버레이 패턴 ────────────────────
 @media (max-width: 1200px) {
-  :root {
-    --sidebar-width: 52px;
-  }
-
-  .sidebar.left {
-    .profile-container,
-    .search,
-    .explorer {
-      display: none !important;
-    }
-
-    .page-title {
-      writing-mode: vertical-lr;
-      transform: rotate(180deg);
-      margin-top: 4rem;
-      font-size: 1rem;
-      white-space: nowrap;
-      display: block;
-      text-align: center;
-      width: 100%;
-    }
-  }
-
-  .sidebar-resize-handle {
-    display: none !important;
-  }
-}
-
-// 모바일(≤800px): 사이드바 숨김, 본문 전체 너비
-@media (max-width: 800px) {
   :root {
     --sidebar-width: 0px;
   }
 
+  // 사이드바: 전체 높이 오버레이, 왼쪽 밖으로 대기
   .sidebar.left {
-    transform: translateX(-100%);
-    transition: transform 0.2s ease;
+    position: fixed !important;
+    top: 0 !important;
+    left: -300px !important;
+    height: 100vh !important;
+    height: 100dvh !important;  // 모바일 브라우저 주소창 대응
     width: 280px !important;
-    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.4);
+    min-width: 0 !important;
+    max-width: none !important;
+    z-index: 200 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    transition: left 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: none !important;
+    padding: 1.25rem !important;
+    box-sizing: border-box !important;
 
-    .profile-container,
-    .search,
-    .explorer {
-      display: flex !important;
-    }
+    // 모든 컨텐츠 항상 표시
+    .profile-container { display: flex !important; }
+    .search            { display: block !important; }
+    .explorer          { display: block !important; }
 
     .page-title {
       writing-mode: initial !important;
       transform: none !important;
       margin-top: 0 !important;
-      font-size: 1.75rem !important;
+      font-size: 1.5rem !important;
     }
   }
 
-  // 모바일 사이드바 열림
-  #quartz-body.mobile-sidebar-open .sidebar.left {
-    transform: translateX(0);
+  // sidebar-collapsed 무력화
+  #quartz-body.sidebar-collapsed .sidebar.left,
+  html.sidebar-pre-collapsed #quartz-body .sidebar.left {
+    height: 100vh !important;
+    height: 100dvh !important;
+    width: 280px !important;
+    .profile-container { display: flex !important; }
+    .search            { display: block !important; }
+    .explorer          { display: block !important; }
+    .page-title {
+      writing-mode: initial !important;
+      transform: none !important;
+      margin-top: 0 !important;
+      font-size: 1.5rem !important;
+    }
   }
 
+  // 사이드바 열림
+  #quartz-body.mobile-sidebar-open .sidebar.left {
+    left: 0 !important;
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  // 본문: 전체 너비
   #quartz-body .center,
   #quartz-body > footer {
-    margin-left: 1rem !important;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 3.5rem;   // 토글 버튼 너비(~2.75rem) + 여백
+    padding-right: 1.5rem;
     max-width: 100%;
+    box-sizing: border-box;
   }
 
+  // 토글 버튼: 터치 타겟 44px 이상
   .sidebar-toggle-btn {
+    top: 0.75rem !important;
     left: 0.5rem !important;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    font-size: 1.15rem !important;
+    z-index: 300;
+    border-radius: 8px !important;
   }
 
   .sidebar-resize-handle {
     display: none !important;
+  }
+
+  // 백드롭
+  .mobile-sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.48);
+    z-index: 150;
+    cursor: pointer;
+  }
+
+  #quartz-body.mobile-sidebar-open .mobile-sidebar-backdrop {
+    display: block;
   }
 }
 
