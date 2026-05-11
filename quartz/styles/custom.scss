@@ -61,7 +61,8 @@
 }
 
 // 접힘 상태 - CSS 변수만 바꾸면 핸들·본문·사이드바 모두 자동 반응
-#quartz-body.sidebar-collapsed {
+#quartz-body.sidebar-collapsed,
+html.sidebar-pre-collapsed #quartz-body {
   --sidebar-width: 110px;
 }
 
@@ -79,21 +80,21 @@
   display: none !important;
 }
 
-// 본문 영역 - 사이드바 너비만큼 자동으로 밀림
+// 본문 영역 - 사이드바 오른쪽 끝 + 4rem 여백
 #quartz-body .center {
-  margin-left: var(--sidebar-width) !important;
+  margin-left: calc(var(--sidebar-width) + 4rem) !important;
   margin-right: 0 !important;
   max-width: 860px;
   min-width: 0;
-  padding: 2rem 2rem 2rem 3rem;
+  padding: 2rem 2rem 2rem 0;
   box-sizing: border-box;
 }
 
-// footer도 sidebar 너비만큼 밀기
+// footer도 동일 기준 정렬
 #quartz-body > footer {
-  margin-left: var(--sidebar-width) !important;
+  margin-left: calc(var(--sidebar-width) + 4rem) !important;
   margin-right: 0 !important;
-  padding: 1rem 2rem 1rem 3rem;
+  padding: 1rem 2rem;
   box-sizing: border-box;
 }
 

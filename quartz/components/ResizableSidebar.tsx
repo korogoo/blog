@@ -3,6 +3,9 @@ import { QuartzComponentConstructor } from "./types"
 const darkmodeInit = `
 localStorage.setItem("theme", "dark");
 document.documentElement.setAttribute("saved-theme", "dark");
+if (localStorage.getItem("sidebar-collapsed") === "1") {
+  document.documentElement.classList.add("sidebar-pre-collapsed");
+}
 `
 
 function ResizableSidebar() {
@@ -53,7 +56,10 @@ function ResizableSidebar() {
       document.body.appendChild(btn);
     }
 
-    setCollapsed(localStorage.getItem(COLLAPSED_KEY) === '1');
+    const isCollapsed = localStorage.getItem(COLLAPSED_KEY) === '1';
+    setCollapsed(isCollapsed);
+    // prescript에서 미리 붙인 클래스 제거 (JS가 이어받음)
+    document.documentElement.classList.remove('sidebar-pre-collapsed');
 
     // 핸들은 CSS에서 left: var(--sidebar-width)로 자동 추적됨
     let handle = document.querySelector('.sidebar-resize-handle');
