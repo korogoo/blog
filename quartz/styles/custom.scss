@@ -4,30 +4,66 @@
 // 사이드바 드래그 리사이즈
 :root {
   --sidebar-width: 320px;
+  --content-offset: 5rem;
 }
 
-// 오른쪽 사이드바 제거 + 가운데 정렬
+// 그리드 제거 - 사이드바 fixed로 변경
 #quartz-body {
-  grid-template-columns: var(--sidebar-width) minmax(0, 860px) !important;
-  justify-content: center;
+  display: block !important;
 }
 
-#quartz-body.sidebar-collapsed {
-  grid-template-columns: 0px minmax(0, 860px) !important;
-}
-
-// 왼쪽 사이드바
+// 왼쪽 사이드바 fixed
 .sidebar.left {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
   width: var(--sidebar-width);
   min-width: 0;
   max-width: 560px;
-  position: relative;
-  transition: width 0.2s ease;
   overflow-y: auto;
   overflow-x: hidden;
+  z-index: 100;
+  background: var(--light);
+  border-right: 1px solid var(--lightgray);
+  transition: width 0.15s ease;
+
+  // 스크롤바 어둡게
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--lightgray);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 3px;
+  }
 }
 
-// 사이드바 너비 조절 핸들 (스크롤바 오른쪽)
+#quartz-body.sidebar-collapsed .sidebar.left {
+  width: 0 !important;
+  border-right: none;
+}
+
+// 오른쪽 사이드바 숨김
+.sidebar.right {
+  display: none !important;
+}
+
+// 본문 영역 - 사이드바 width + 여백만큼 밀기
+#quartz-center {
+  margin-left: calc(var(--sidebar-width) + var(--content-offset));
+  max-width: 860px;
+  padding: 0 2rem;
+  transition: margin-left 0.15s ease;
+}
+
+#quartz-body.sidebar-collapsed #quartz-center {
+  margin-left: var(--content-offset);
+}
+
+// 사이드바 너비 조절 핸들
 .sidebar-resize-handle {
   position: fixed;
   top: 0;
@@ -41,11 +77,6 @@
   &:hover {
     background: var(--lightgray);
   }
-}
-
-#quartz-body.sidebar-collapsed .sidebar.left {
-  width: 0;
-  padding: 0;
 }
 
 // 커스텀 태스크 아이콘 (Lucide SVG)
