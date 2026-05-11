@@ -27,13 +27,16 @@ function ResizableSidebar() {
   function setCollapsed(collapsed) {
     const body = document.getElementById('quartz-body');
     const btn = document.querySelector('.sidebar-toggle-btn');
+    const handle = document.querySelector('.sidebar-resize-handle');
     if (!body || !btn) return;
     if (collapsed) {
       body.classList.add('sidebar-collapsed');
       btn.textContent = '▶';
+      if (handle) handle.style.display = 'none';
     } else {
       body.classList.remove('sidebar-collapsed');
       btn.textContent = '☰';
+      if (handle) handle.style.display = '';
     }
     localStorage.setItem(COLLAPSED_KEY, collapsed ? '1' : '0');
   }
