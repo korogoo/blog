@@ -45,28 +45,35 @@
   width: var(--sidebar-width);
   min-width: 0;
   max-width: 560px;
-  overflow-y: auto;
+  overflow: hidden;           // 사이드바 자체는 스크롤 안 함
   overflow-x: hidden;
+  display: flex !important;
+  flex-direction: column !important;
   z-index: 100;
   background: var(--light);
   border-right: 1px solid var(--lightgray);
   padding: 1rem !important;
 
-  // 자식들이 flex shrink 되면 sidebar overflow가 발동 안 됨 → 고정 크기 유지
+  // Profile, Title, Search 는 고정
   & > * {
     flex-shrink: 0;
   }
 
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
-  &::-webkit-scrollbar-track {
-    background: var(--light);
-  }
-  &::-webkit-scrollbar-thumb {
-    background: var(--gray);
-    border-radius: 3px;
-    &:hover { background: var(--darkgray); }
+  // Explorer 가 남은 공간을 채우고 내부에서 마우스 휠 스크롤
+  .explorer {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--gray) transparent;
+
+    &::-webkit-scrollbar { width: 4px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb {
+      background: var(--gray);
+      border-radius: 2px;
+    }
   }
 }
 
