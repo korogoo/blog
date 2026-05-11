@@ -702,6 +702,11 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options>>
             const char = match[1]
             if (!CUSTOM_TASKS[char]) return
             node.properties = { ...node.properties, "data-task": char }
+            // " 는 CSS attribute selector 에서 처리가 안 되므로 클래스를 추가
+            if (char === '"') {
+              const existing = (node.properties.class as string) || ""
+              node.properties.class = (existing + " task-quote").trim()
+            }
             textNode.value = textNode.value.slice(match[0].length)
           })
         }
