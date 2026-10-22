@@ -11,15 +11,18 @@ import { concatenateResources } from "../util/resources"
 
 interface Options {
   layout: "modern" | "legacy"
+  collapsible: boolean
 }
 
 const defaultOptions: Options = {
   layout: "modern",
+  collapsible: true,
 }
 
 let numTocs = 0
 export default ((opts?: Partial<Options>) => {
   const layout = opts?.layout ?? defaultOptions.layout
+  const collapsible = opts?.collapsible ?? defaultOptions.collapsible
   const { OverflowList, overflowListAfterDOMLoaded } = OverflowListFactory()
   const TableOfContents: QuartzComponent = ({
     fileData,
@@ -31,34 +34,38 @@ export default ((opts?: Partial<Options>) => {
     }
 
     const id = `toc-${numTocs++}`
+    const collapsed = collapsible && fileData.collapseToc
     return (
       <div class={classNames(displayClass, "toc")}>
-        <button
-          type="button"
-          class={fileData.collapseToc ? "collapsed toc-header" : "toc-header"}
-          aria-controls={id}
-          aria-expanded={!fileData.collapseToc}
-        >
-          <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="fold"
+        {collapsible ? (
+          <button
+            type="button"
+            class={collapsed ? "collapsed toc-header" : "toc-header"}
+            aria-controls={id}
+            aria-expanded={!collapsed}
           >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
-        </button>
-        <OverflowList
-          id={id}
-          class={fileData.collapseToc ? "collapsed toc-content" : "toc-content"}
-        >
+            <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="fold"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        ) : (
+          <div class="toc-header">
+            <h3>{i18n(cfg.locale).components.tableOfContents.title}</h3>
+          </div>
+        )}
+        <OverflowList id={id} class={collapsed ? "collapsed toc-content" : "toc-content"}>
           {fileData.toc.map((tocEntry) => (
             <li key={tocEntry.slug} class={`depth-${tocEntry.depth}`}>
               <a href={`#${tocEntry.slug}`} data-for={tocEntry.slug}>

@@ -1,0 +1,551 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "excalidraw-cli",
+  "elements": [
+    {
+      "type": "text",
+      "id": "title",
+      "x": 70,
+      "y": 55,
+      "text": "코드와 정책이 달라졌는지는 사람이 최종 판단한다",
+      "fontSize": 36,
+      "fontFamily": 1
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "x": 72,
+      "y": 112,
+      "text": "PR 정책 검토 자동화 설계  /  구현 및 팀 사용 결과는 미검증",
+      "fontSize": 18,
+      "strokeColor": "#707070",
+      "fontFamily": 1
+    },
+    {
+      "type": "rectangle",
+      "id": "docs",
+      "x": 70,
+      "y": 230,
+      "width": 300,
+      "height": 150,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "docs_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "docs_label",
+      "x": 80,
+      "y": 240,
+      "width": 280,
+      "height": 130,
+      "text": "현재 도메인 문서\n\n팀이 합의한 개념 / 정책",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "docs"
+    },
+    {
+      "type": "rectangle",
+      "id": "pr",
+      "x": 70,
+      "y": 500,
+      "width": 300,
+      "height": 150,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "pr_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "pr_label",
+      "x": 80,
+      "y": 510,
+      "width": 280,
+      "height": 130,
+      "text": "새 PR\n\n변경 코드 / 테스트 / 설명",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "pr"
+    },
+    {
+      "type": "arrow",
+      "id": "docs-in",
+      "x": 370,
+      "y": 305,
+      "width": 180,
+      "height": 120,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          180,
+          120
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1
+    },
+    {
+      "type": "arrow",
+      "id": "pr-in",
+      "x": 370,
+      "y": 575,
+      "width": 180,
+      "height": -120,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          180,
+          -120
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1
+    },
+    {
+      "type": "rectangle",
+      "id": "compare",
+      "x": 550,
+      "y": 330,
+      "width": 340,
+      "height": 220,
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeStyle": "dashed",
+      "boundElements": [
+        {
+          "id": "compare_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "compare_label",
+      "x": 560,
+      "y": 340,
+      "width": 320,
+      "height": 200,
+      "text": "AI 비교\n\n정책과 다른 코드 위치\n근거가 된 문서 문장\n변경 후보를 리뷰로 제시",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "compare"
+    },
+    {
+      "type": "arrow",
+      "id": "candidate",
+      "x": 890,
+      "y": 440,
+      "width": 150,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          150,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "candidate_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "candidate_label",
+      "x": 900,
+      "y": 450,
+      "width": 130,
+      "height": 40,
+      "text": "후보",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "candidate"
+    },
+    {
+      "type": "diamond",
+      "id": "human",
+      "x": 1020,
+      "y": 325,
+      "width": 300,
+      "height": 230,
+      "backgroundColor": "#1e1e1e",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "human_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "human_label",
+      "x": 1030,
+      "y": 335,
+      "width": 280,
+      "height": 210,
+      "text": "팀원이 판단\n\n구현 오류인가?\n의도한 정책 변경인가?",
+      "fontSize": 19,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "human",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "type": "arrow",
+      "id": "bug",
+      "x": 1170,
+      "y": 335,
+      "width": 0,
+      "height": -135,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -135
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "bug_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "bug_label",
+      "x": 1180,
+      "y": 345,
+      "width": 80,
+      "height": -155,
+      "text": "구현 오류",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "bug"
+    },
+    {
+      "type": "rectangle",
+      "id": "fix",
+      "x": 1010,
+      "y": 80,
+      "width": 320,
+      "height": 120,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "fix_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "fix_label",
+      "x": 1020,
+      "y": 90,
+      "width": 300,
+      "height": 100,
+      "text": "코드와 테스트를 수정\n문서는 바꾸지 않음",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "fix"
+    },
+    {
+      "type": "arrow",
+      "id": "policy",
+      "x": 1300,
+      "y": 440,
+      "width": 170,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          170,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "policy_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "policy_label",
+      "x": 1310,
+      "y": 450,
+      "width": 150,
+      "height": 40,
+      "text": "의도한 변경",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "policy"
+    },
+    {
+      "type": "rectangle",
+      "id": "approve",
+      "x": 1470,
+      "y": 360,
+      "width": 260,
+      "height": 160,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "approve_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "approve_label",
+      "x": 1480,
+      "y": 370,
+      "width": 240,
+      "height": 140,
+      "text": "팀 검토 / 승인\n\nPR 병합 상태 확인",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "approve"
+    },
+    {
+      "type": "arrow",
+      "id": "merge-out",
+      "x": 1600,
+      "y": 520,
+      "width": -240,
+      "height": 220,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -240,
+          220
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1
+    },
+    {
+      "type": "rectangle",
+      "id": "history",
+      "x": 1030,
+      "y": 740,
+      "width": 330,
+      "height": 160,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "history_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "history_label",
+      "x": 1040,
+      "y": 750,
+      "width": 310,
+      "height": 140,
+      "text": "변경 이력\n\n이전 정책 / 새 정책\n근거 PR / 병합 상태",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "history"
+    },
+    {
+      "type": "rectangle",
+      "id": "final-doc",
+      "x": 1450,
+      "y": 740,
+      "width": 280,
+      "height": 160,
+      "backgroundColor": "#1e1e1e",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "final-doc_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "final-doc_label",
+      "x": 1460,
+      "y": 750,
+      "width": 260,
+      "height": 140,
+      "text": "최종 도메인 문서\n\n현재 유효한 정책",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "final-doc",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "type": "arrow",
+      "id": "history-to-final",
+      "x": 1360,
+      "y": 820,
+      "width": 90,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          90,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1
+    },
+    {
+      "type": "rectangle",
+      "id": "guardrail",
+      "x": 70,
+      "y": 820,
+      "width": 720,
+      "height": 205,
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeStyle": "dashed",
+      "boundElements": [
+        {
+          "id": "guardrail_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "guardrail_label",
+      "x": 80,
+      "y": 830,
+      "width": 700,
+      "height": 185,
+      "text": "자동으로 확정하지 않는 것\n\n내부 리팩터링\n근거가 부족한 변경\n아직 병합되지 않은 제안\n\nAI는 후보와 근거만 제시한다",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "guardrail"
+    },
+    {
+      "type": "text",
+      "id": "checks",
+      "x": 1030,
+      "y": 955,
+      "text": "확인할 것: 누락률  /  오탐률  /  중복 이력  /  최종 코드와 문서의 일치",
+      "fontSize": 18,
+      "strokeColor": "#707070",
+      "fontFamily": 1
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}

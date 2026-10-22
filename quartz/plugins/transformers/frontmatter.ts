@@ -81,6 +81,20 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
             if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
 
+            for (const key of ["project", "area", "category", "series"] as const) {
+              if (data[key] != null) {
+                const value = data[key].toString().trim()
+                if (value.length > 0) data[key] = value
+                else delete data[key]
+              }
+            }
+
+            if (data.order != null) {
+              const order = Number(data.order)
+              if (Number.isFinite(order)) data.order = order
+              else delete data.order
+            }
+
             const aliases = coerceToArray(coalesceAliases(data, ["aliases", "alias"]))
             if (aliases) {
               data.aliases = aliases // frontmatter
@@ -153,6 +167,11 @@ declare module "vfile" {
         cssclasses: string[]
         socialImage: string
         comments: boolean | string
+        project: string
+        area: string
+        category: string
+        series: string
+        order: number
       }>
   }
 }

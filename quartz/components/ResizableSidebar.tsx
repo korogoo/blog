@@ -1,8 +1,6 @@
 import { QuartzComponentConstructor } from "./types"
 
-const darkmodeInit = `
-localStorage.setItem("theme", "dark");
-document.documentElement.setAttribute("saved-theme", "dark");
+const sidebarInit = `
 if (localStorage.getItem("sidebar-collapsed") === "1") {
   document.documentElement.classList.add("sidebar-pre-collapsed");
 }
@@ -55,6 +53,13 @@ function ResizableSidebar() {
   }
 
   function init() {
+    const quartzBody = document.getElementById('quartz-body');
+    if (quartzBody && quartzBody.classList.contains('home-shell')) {
+      document.querySelector('.sidebar-toggle-btn')?.remove();
+      document.querySelector('.sidebar-resize-handle')?.remove();
+      document.documentElement.classList.remove('sidebar-pre-collapsed');
+      return;
+    }
     if (!document.querySelector('.sidebar.left')) return;
 
     // 데스크탑에서만 저장된 너비 적용
@@ -86,7 +91,6 @@ function ResizableSidebar() {
     };
 
     // 백드롭 생성 (1회) - #quartz-body 자식으로 추가해야 CSS 셀렉터 매칭됨
-    const quartzBody = document.getElementById('quartz-body');
     if (quartzBody && !quartzBody.querySelector('.mobile-sidebar-backdrop')) {
       const backdrop = document.createElement('div');
       backdrop.className = 'mobile-sidebar-backdrop';
@@ -151,6 +155,6 @@ function ResizableSidebar() {
   )
 }
 
-ResizableSidebar.beforeDOMLoaded = darkmodeInit
+ResizableSidebar.beforeDOMLoaded = sidebarInit
 
 export default (() => ResizableSidebar) satisfies QuartzComponentConstructor

@@ -11,11 +11,10 @@
   }
 }
 
-button.toc-header {
+.toc-header {
   background-color: transparent;
   border: none;
   text-align: left;
-  cursor: pointer;
   padding: 0;
   color: var(--dark);
   display: flex;
@@ -36,6 +35,10 @@ button.toc-header {
   &.collapsed .fold {
     transform: rotateZ(-90deg);
   }
+}
+
+button.toc-header {
+  cursor: pointer;
 }
 
 ul.toc-content.overflow {

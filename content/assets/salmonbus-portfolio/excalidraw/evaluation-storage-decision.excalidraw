@@ -1,0 +1,506 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "excalidraw-cli",
+  "elements": [
+    {
+      "type": "text",
+      "id": "title",
+      "x": 70,
+      "y": 55,
+      "text": "정확도에 쓰는 평가는 유지하고, 중복 저장만 줄였다",
+      "fontSize": 36,
+      "fontFamily": 1
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "x": 72,
+      "y": 112,
+      "text": "같은 차량이 같은 정류장에 있고 15초마다 12개 예보를 만드는 설명용 흐름",
+      "fontSize": 18,
+      "strokeColor": "#707070",
+      "fontFamily": 1
+    },
+    {
+      "type": "rectangle",
+      "id": "observation",
+      "x": 70,
+      "y": 280,
+      "width": 260,
+      "height": 130,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "observation_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "observation_label",
+      "x": 80,
+      "y": 290,
+      "width": 240,
+      "height": 110,
+      "text": "차량 관측\n10:00:15",
+      "fontSize": 24,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "observation"
+    },
+    {
+      "type": "arrow",
+      "id": "a1",
+      "x": 330,
+      "y": 345,
+      "width": 150,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          150,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "a1_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "a1_label",
+      "x": 340,
+      "y": 355,
+      "width": 130,
+      "height": 40,
+      "text": "12개 예보",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "a1"
+    },
+    {
+      "type": "rectangle",
+      "id": "evaluate",
+      "x": 480,
+      "y": 280,
+      "width": 300,
+      "height": 130,
+      "backgroundColor": "#1e1e1e",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "evaluate_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "evaluate_label",
+      "x": 490,
+      "y": 290,
+      "width": 280,
+      "height": 110,
+      "text": "12개 모두 정산\n당일 보정에 반영",
+      "fontSize": 24,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "evaluate",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "type": "arrow",
+      "id": "a2",
+      "x": 780,
+      "y": 345,
+      "width": 140,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          140,
+          0
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1
+    },
+    {
+      "type": "diamond",
+      "id": "detail-check",
+      "x": 920,
+      "y": 245,
+      "width": 230,
+      "height": 200,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "detail-check_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "detail-check_label",
+      "x": 930,
+      "y": 255,
+      "width": 210,
+      "height": 180,
+      "text": "상세 저장이\n필요한가?",
+      "fontSize": 23,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "detail-check"
+    },
+    {
+      "type": "text",
+      "id": "conditions-title",
+      "x": 900,
+      "y": 500,
+      "text": "상세 저장 조건",
+      "fontSize": 22,
+      "fontFamily": 1
+    },
+    {
+      "type": "text",
+      "id": "conditions",
+      "x": 900,
+      "y": 545,
+      "text": "60초 경과\n정류장 / 방향 / 노선 판본 / 모델 변경\n한 정류장 앞 예보\n방향 미확인 / 과거 재처리\n정상 정산이 아닌 결과",
+      "fontSize": 19,
+      "strokeColor": "#707070",
+      "fontFamily": 1
+    },
+    {
+      "type": "arrow",
+      "id": "yes",
+      "x": 1150,
+      "y": 300,
+      "width": 170,
+      "height": -80,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          170,
+          -80
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "yes_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "yes_label",
+      "x": 1160,
+      "y": 310,
+      "width": 150,
+      "height": -100,
+      "text": "예",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "yes"
+    },
+    {
+      "type": "rectangle",
+      "id": "full",
+      "x": 1320,
+      "y": 140,
+      "width": 240,
+      "height": 190,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "full_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "full_label",
+      "x": 1330,
+      "y": 150,
+      "width": 220,
+      "height": 170,
+      "text": "전체 상세 결과\n\n차량 / 정류장 정보까지\n기존 형식으로 저장",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "full"
+    },
+    {
+      "type": "arrow",
+      "id": "no",
+      "x": 1150,
+      "y": 390,
+      "width": 170,
+      "height": 80,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          170,
+          80
+        ]
+      ],
+      "endArrowhead": "arrow",
+      "roughness": 1,
+      "strokeStyle": "dashed",
+      "boundElements": [
+        {
+          "id": "no_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "no_label",
+      "x": 1160,
+      "y": 400,
+      "width": 150,
+      "height": 60,
+      "text": "아니오",
+      "fontSize": 16,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "no"
+    },
+    {
+      "type": "rectangle",
+      "id": "compact",
+      "x": 1320,
+      "y": 410,
+      "width": 240,
+      "height": 215,
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeStyle": "dashed",
+      "boundElements": [
+        {
+          "id": "compact_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "compact_label",
+      "x": 1330,
+      "y": 420,
+      "width": 220,
+      "height": 195,
+      "text": "최소 결과\n\n예보 ID / 도착 관측 ID\n실제 잔여석 / 정산 시각\n도착 시각 / 방향",
+      "fontSize": 19,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "compact"
+    },
+    {
+      "type": "line",
+      "id": "divider",
+      "x": 70,
+      "y": 720,
+      "width": 1490,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1490,
+          0
+        ]
+      ],
+      "strokeColor": "#707070",
+      "strokeWidth": 1,
+      "roughness": 0
+    },
+    {
+      "type": "text",
+      "id": "results-title",
+      "x": 70,
+      "y": 770,
+      "text": "같은 1,684,742개 예보를 비교한 재생 실험",
+      "fontSize": 30,
+      "fontFamily": 1
+    },
+    {
+      "type": "rectangle",
+      "id": "metric1",
+      "x": 70,
+      "y": 850,
+      "width": 430,
+      "height": 170,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "metric1_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "metric1_label",
+      "x": 80,
+      "y": 860,
+      "width": 410,
+      "height": 150,
+      "text": "좌석 확률 분포가\n달라진 예보\n\n0건",
+      "fontSize": 24,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "metric1"
+    },
+    {
+      "type": "rectangle",
+      "id": "metric2",
+      "x": 585,
+      "y": 850,
+      "width": 430,
+      "height": 170,
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "boundElements": [
+        {
+          "id": "metric2_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "metric2_label",
+      "x": 595,
+      "y": 860,
+      "width": 410,
+      "height": 150,
+      "text": "정상 정산 상세 저장\n\n1,411,497건 → 586,954건",
+      "fontSize": 24,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "metric2"
+    },
+    {
+      "type": "rectangle",
+      "id": "metric3",
+      "x": 1100,
+      "y": 850,
+      "width": 460,
+      "height": 170,
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeStyle": "dashed",
+      "boundElements": [
+        {
+          "id": "metric3_label",
+          "type": "text"
+        }
+      ],
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "type": "text",
+      "id": "metric3_label",
+      "x": 1110,
+      "y": 860,
+      "width": 440,
+      "height": 150,
+      "text": "PostgreSQL 18 모의 10만 행\n인덱스 포함 저장 공간\n\n약 27% 감소",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "metric3"
+    },
+    {
+      "type": "text",
+      "id": "scope",
+      "x": 1100,
+      "y": 1055,
+      "text": "운영 DB 전체 감소율이 아닌 저장 형식 비교",
+      "fontSize": 16,
+      "strokeColor": "#707070",
+      "fontFamily": 1
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}

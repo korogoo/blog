@@ -1,5 +1,6 @@
-localStorage.setItem("theme", "dark")
-document.documentElement.setAttribute("saved-theme", "dark")
+const savedTheme = localStorage.getItem("theme")
+const initialTheme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : "light"
+document.documentElement.setAttribute("saved-theme", initialTheme)
 
 const emitThemeChangeEvent = (theme: "light" | "dark") => {
   const event: CustomEventMap["themechange"] = new CustomEvent("themechange", {
