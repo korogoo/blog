@@ -562,15 +562,6 @@
   overflow-wrap: anywhere;
 }
 
-.home-latest {
-  background: #dfeeff;
-  border: 1px solid var(--home-line);
-  border-radius: 1.85rem 2.05rem 1.75rem 2rem;
-  box-shadow: 3px 4px 0 #eef2f4;
-  margin-top: 1.5rem;
-  padding: clamp(1.25rem, 2.5vw, 2rem);
-}
-
 .home-browse {
   padding-top: clamp(3.5rem, 7vw, 6rem);
 }
@@ -596,18 +587,10 @@
   margin: 0.9rem 0 0;
 }
 
-.latest-post-grid,
 .browse-post-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.latest-post-grid {
-  margin-top: 1.75rem;
-}
-
-.browse-post-grid {
   margin-top: 1rem;
 }
 
@@ -736,7 +719,6 @@
     flex-direction: column;
   }
 
-  .latest-post-grid,
   .browse-post-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -801,12 +783,6 @@
     grid-template-columns: 1fr;
   }
 
-  .home-latest {
-    border-radius: 1.5rem 1.65rem 1.4rem 1.6rem;
-    padding: 1rem;
-  }
-
-  .latest-post-grid,
   .browse-post-grid {
     grid-template-columns: minmax(0, 1fr);
     min-width: 0;

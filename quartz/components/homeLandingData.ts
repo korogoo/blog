@@ -140,7 +140,3 @@ export function selectHomePosts(
       })
     })
 }
-
-export function takeLatestPosts(posts: QuartzPluginData[], count = 3): QuartzPluginData[] {
-  return posts.slice(0, Math.max(0, count))
-}

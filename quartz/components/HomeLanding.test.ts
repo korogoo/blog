@@ -10,7 +10,6 @@ import {
   matchesHomeFilters,
   selectHomePosts,
   summarizePostDescription,
-  takeLatestPosts,
 } from "./homeLandingData"
 
 function post(slug: string, frontmatter: QuartzPluginData["frontmatter"]): QuartzPluginData {
@@ -87,14 +86,6 @@ test("category and project filters are combined", () => {
   assert.equal(matchesHomeFilters(meta, "data-integrity", "koroglish"), true)
   assert.equal(matchesHomeFilters(meta, "testing-quality", "koroglish"), false)
   assert.equal(matchesHomeFilters(meta, "data-integrity", "salmonbus"), false)
-})
-
-test("takeLatestPosts returns no more than three posts by default", () => {
-  const posts = [1, 2, 3, 4].map((index) => post(String(index), { title: String(index) }))
-  assert.deepEqual(
-    takeLatestPosts(posts).map((page) => page.slug),
-    ["1", "2", "3"],
-  )
 })
 
 test("standalone navigation pages do not appear in post listings", () => {

@@ -12,7 +12,6 @@ import {
   homeProjects,
   selectHomePosts,
   summarizePostDescription,
-  takeLatestPosts,
 } from "./homeLandingData"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/homeLanding.scss"
@@ -108,38 +107,16 @@ export function HomeNav({ currentSlug }: { currentSlug: FullSlug }) {
 
 const HomeLanding: QuartzComponent = ({ allFiles, cfg, fileData }: QuartzComponentProps) => {
   const posts = selectHomePosts(allFiles, cfg)
-  const latestPosts = takeLatestPosts(posts)
 
   return (
     <main id="about" class="home-landing">
       <HomeNav currentSlug={fileData.slug!} />
 
-      {latestPosts.length > 0 && (
-        <section id="latest-posts" class="home-latest" aria-labelledby="latest-heading">
-          <div class="home-section-heading">
-            <p class="post-kicker">LATEST NOTES</p>
-            <h1 id="latest-heading">최근 글</h1>
-            <p>최근에 작성한 글 3개입니다.</p>
-          </div>
-          <div class="latest-post-grid">
-            {latestPosts.map((post, index) => (
-              <PostCard
-                page={post}
-                index={index}
-                cfg={cfg}
-                currentSlug={fileData.slug!}
-                headingLevel={2}
-              />
-            ))}
-          </div>
-        </section>
-      )}
-
       {posts.length > 0 && (
         <section id="browse-posts" class="home-browse" aria-labelledby="browse-heading">
           <div class="home-section-heading">
             <p class="post-kicker">BROWSE NOTES</p>
-            <h2 id="browse-heading">글 찾아보기</h2>
+            <h1 id="browse-heading">글 찾아보기</h1>
             <p>실무 역량과 프로젝트를 기준으로 글을 찾을 수 있습니다.</p>
           </div>
 
@@ -174,7 +151,7 @@ const HomeLanding: QuartzComponent = ({ allFiles, cfg, fileData }: QuartzCompone
                 index={index}
                 cfg={cfg}
                 currentSlug={fileData.slug!}
-                headingLevel={3}
+                headingLevel={2}
                 filterable
               />
             ))}
