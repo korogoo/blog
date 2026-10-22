@@ -1,0 +1,624 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "excalidraw-cli",
+  "elements": [
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 30,
+      "y": 20,
+      "text": "S3 업로드 성공과 DB 삭제 가능은 다른 상태예요",
+      "fontSize": 27,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-2",
+      "type": "text",
+      "x": 30,
+      "y": 62,
+      "text": "DB 트랜잭션을 S3 통신 동안 열어두지 않아요",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#707070",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "x": 45,
+      "y": 125,
+      "text": "RDS",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "x": 470,
+      "y": 125,
+      "text": "이관 worker",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-5",
+      "type": "text",
+      "x": 970,
+      "y": 125,
+      "text": "S3",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "line-6",
+      "type": "line",
+      "x": 95,
+      "y": 165,
+      "width": 0,
+      "height": 570,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          570
+        ]
+      ],
+      "strokeColor": "#707070",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "id": "line-7",
+      "type": "line",
+      "x": 525,
+      "y": 165,
+      "width": 0,
+      "height": 570,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          570
+        ]
+      ],
+      "strokeColor": "#707070",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "id": "line-8",
+      "type": "line",
+      "x": 1020,
+      "y": 165,
+      "width": 0,
+      "height": 570,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          570
+        ]
+      ],
+      "strokeColor": "#707070",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "id": "box-9",
+      "type": "rectangle",
+      "x": 30,
+      "y": 180,
+      "width": 330,
+      "height": 85,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-9_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-9_label",
+      "x": 40,
+      "y": 190,
+      "width": 310,
+      "height": 65,
+      "text": "① 삭제 대상 예약\n짧은 DB 트랜잭션",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-9",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-10",
+      "type": "rectangle",
+      "x": 425,
+      "y": 295,
+      "width": 270,
+      "height": 90,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-10_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-10_label",
+      "x": 435,
+      "y": 305,
+      "width": 250,
+      "height": 70,
+      "text": "② 원본·검증 정보 업로드",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-10",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-11",
+      "type": "rectangle",
+      "x": 865,
+      "y": 295,
+      "width": 290,
+      "height": 90,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-11_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-11_label",
+      "x": 875,
+      "y": 305,
+      "width": 270,
+      "height": 70,
+      "text": "파일 저장\n원본 + manifest",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-11",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-12",
+      "type": "rectangle",
+      "x": 410,
+      "y": 430,
+      "width": 300,
+      "height": 105,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-12_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-12_label",
+      "x": 420,
+      "y": 440,
+      "width": 280,
+      "height": 85,
+      "text": "③ 파일 재다운로드\n건수·해시·내용 비교",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-12",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-13",
+      "type": "rectangle",
+      "x": 30,
+      "y": 565,
+      "width": 330,
+      "height": 85,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-13_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-13_label",
+      "x": 40,
+      "y": 575,
+      "width": 310,
+      "height": 65,
+      "text": "④ 원본·처리 상태 재확인",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-13",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-14",
+      "type": "rectangle",
+      "x": 430,
+      "y": 685,
+      "width": 365,
+      "height": 95,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-14_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-14_label",
+      "x": 440,
+      "y": 695,
+      "width": 345,
+      "height": 75,
+      "text": "⑤ 원본 삭제 + 완료 기록\n같은 트랜잭션으로 확정",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-14",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "arrow-15",
+      "type": "arrow",
+      "x": 360,
+      "y": 222,
+      "width": 65,
+      "height": 116,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          65,
+          116
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-9",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-10",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-16",
+      "type": "arrow",
+      "x": 695,
+      "y": 340,
+      "width": 170,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          170,
+          0
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-10",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-11",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-17",
+      "type": "arrow",
+      "x": 865,
+      "y": 385,
+      "width": 155,
+      "height": 95,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -155,
+          95
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-11",
+        "fixedPoint": [
+          0,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-12",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-18",
+      "type": "arrow",
+      "x": 410,
+      "y": 480,
+      "width": 50,
+      "height": 125,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -50,
+          125
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-12",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-13",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-19",
+      "type": "arrow",
+      "x": 360,
+      "y": 608,
+      "width": 70,
+      "height": 125,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          70,
+          125
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-13",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-14",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "text-20",
+      "type": "text",
+      "x": 830,
+      "y": 575,
+      "text": "어느 단계든 실패하면",
+      "fontSize": 19,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-21",
+      "type": "rectangle",
+      "x": 835,
+      "y": 620,
+      "width": 325,
+      "height": 85,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-21_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-21_label",
+      "x": 845,
+      "y": 630,
+      "width": 305,
+      "height": 65,
+      "text": "삭제하지 않고\nRDS 원본 유지",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-21",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "arrow-22",
+      "type": "arrow",
+      "x": 710,
+      "y": 530,
+      "width": 125,
+      "height": 130,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          125,
+          130
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "endArrowhead": "arrow"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}

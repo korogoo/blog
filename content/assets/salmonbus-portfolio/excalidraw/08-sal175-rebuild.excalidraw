@@ -1,0 +1,444 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "excalidraw-cli",
+  "elements": [
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 30,
+      "y": 20,
+      "text": "DB에서 지운 평가도 과거 통계에 다시 쓸 수 있어요",
+      "fontSize": 27,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-2",
+      "type": "text",
+      "x": 30,
+      "y": 62,
+      "text": "A·B는 완료 후 이관, C는 집계 대기 · 설명용 행 예시",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#707070",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "x": 45,
+      "y": 135,
+      "text": "이관 전",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-4",
+      "type": "rectangle",
+      "x": 40,
+      "y": 185,
+      "width": 340,
+      "height": 255,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-4_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-4_label",
+      "x": 50,
+      "y": 195,
+      "width": 320,
+      "height": 235,
+      "text": "RDS / 평가 결과\n\nA  완료·집계 반영\nB  완료·집계 반영\nC  집계 대기",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-4",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "text-5",
+      "type": "text",
+      "x": 505,
+      "y": 135,
+      "text": "이관 후",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-6",
+      "type": "rectangle",
+      "x": 505,
+      "y": 185,
+      "width": 335,
+      "height": 110,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-6_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-6_label",
+      "x": 515,
+      "y": 195,
+      "width": 315,
+      "height": 90,
+      "text": "RDS / 평가 결과\nC  집계 대기",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-6",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-7",
+      "type": "rectangle",
+      "x": 505,
+      "y": 335,
+      "width": 335,
+      "height": 105,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-7_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-7_label",
+      "x": 515,
+      "y": 345,
+      "width": 315,
+      "height": 85,
+      "text": "RDS / 이관 기록\nA·B → S3 파일 위치",
+      "fontSize": 19,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-7",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-8",
+      "type": "rectangle",
+      "x": 505,
+      "y": 540,
+      "width": 335,
+      "height": 105,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-8_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-8_label",
+      "x": 515,
+      "y": 550,
+      "width": 315,
+      "height": 85,
+      "text": "S3 / 완료 결과 파일\nA·B 원본 + 검증 정보",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-8",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "arrow-9",
+      "type": "arrow",
+      "x": 380,
+      "y": 250,
+      "width": 125,
+      "height": 10,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          125,
+          -10
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-4",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-6",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-10",
+      "type": "arrow",
+      "x": 235,
+      "y": 440,
+      "width": 270,
+      "height": 155,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          270,
+          155
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-4",
+        "fixedPoint": [
+          0.55,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "text-11",
+      "type": "text",
+      "x": 290,
+      "y": 488,
+      "text": "A·B 이관",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-12",
+      "type": "rectangle",
+      "x": 945,
+      "y": 260,
+      "width": 270,
+      "height": 220,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-12_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-12_label",
+      "x": 955,
+      "y": 270,
+      "width": 250,
+      "height": 200,
+      "text": "과거 재집계\n\nRDS·S3에서\n필요한 결과만 읽기\n\n통계와 진행 위치\nRDS에 저장",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-12",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "arrow-13",
+      "type": "arrow",
+      "x": 840,
+      "y": 390,
+      "width": 105,
+      "height": 45,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          105,
+          -45
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-7",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-12",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-14",
+      "type": "arrow",
+      "x": 840,
+      "y": 590,
+      "width": 105,
+      "height": 160,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          105,
+          -160
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-12",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "line-15",
+      "type": "line",
+      "x": 45,
+      "y": 690,
+      "width": 1165,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1165,
+          0
+        ]
+      ],
+      "strokeColor": "#707070",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1
+    },
+    {
+      "id": "text-16",
+      "type": "text",
+      "x": 45,
+      "y": 725,
+      "text": "전체 원본을 DB에 되돌리는 과정이 아니에요",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}

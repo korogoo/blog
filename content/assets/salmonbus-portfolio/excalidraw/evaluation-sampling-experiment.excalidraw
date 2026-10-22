@@ -4,148 +4,111 @@
   "source": "excalidraw-cli",
   "elements": [
     {
+      "id": "text-1",
       "type": "text",
-      "id": "title",
-      "x": 70,
-      "y": 55,
-      "text": "평가 횟수를 줄이면 저장량만 줄어들까?",
-      "fontSize": 36,
-      "fontFamily": 1
+      "x": 30,
+      "y": 24,
+      "text": "평가 횟수 축소 실험: 평균과 개별 예측을 함께 확인",
+      "fontSize": 28,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
     },
     {
+      "id": "text-2",
       "type": "text",
-      "id": "subtitle",
-      "x": 72,
-      "y": 112,
-      "text": "8개 노선  /  2026-10-05 관측 재생 실험",
+      "x": 30,
+      "y": 68,
+      "text": "8개 노선 · 2026-10-05 관측 재생",
       "fontSize": 18,
+      "fontFamily": 5,
       "strokeColor": "#707070",
-      "fontFamily": 1
+      "textAlign": "left",
+      "roughness": 1
     },
     {
+      "id": "box-3",
       "type": "rectangle",
-      "id": "baseline",
-      "x": 80,
-      "y": 190,
-      "width": 590,
-      "height": 245,
+      "x": 45,
+      "y": 145,
+      "width": 455,
+      "height": 150,
+      "strokeColor": "#222222",
       "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "baseline_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "baseline_label",
-      "x": 90,
-      "y": 200,
-      "width": 570,
-      "height": 225,
-      "text": "기존\n모든 예보를 평가\n\n평가 등록 1,684,742건\n평균 좌석 오차 3.23619석",
-      "fontSize": 24,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "baseline"
-    },
-    {
-      "type": "rectangle",
-      "id": "sampled",
-      "x": 930,
-      "y": 190,
-      "width": 590,
-      "height": 245,
-      "backgroundColor": "#f6f7f8",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "strokeStyle": "dashed",
+      },
       "boundElements": [
         {
-          "id": "sampled_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "sampled_label",
-      "x": 940,
-      "y": 200,
-      "width": 570,
-      "height": 225,
-      "text": "비교안\n같은 위치는 60초마다 평가\n정류장 / 방향 변경은 즉시 평가\n\n평가 등록 688,694건\n평균 좌석 오차 3.24658석",
-      "fontSize": 24,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "sampled"
-    },
-    {
-      "type": "arrow",
-      "id": "compare",
-      "x": 680,
-      "y": 312,
-      "width": 240,
-      "height": 0,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          240,
-          0
-        ]
-      ],
-      "endArrowhead": "arrow",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "compare_label",
+          "id": "box-3_label",
           "type": "text"
         }
       ]
     },
     {
       "type": "text",
-      "id": "compare_label",
-      "x": 690,
-      "y": 322,
-      "width": 220,
-      "height": 40,
-      "text": "등록 약 59% 감소",
-      "fontSize": 18,
+      "id": "box-3_label",
+      "x": 55,
+      "y": 155,
+      "width": 435,
+      "height": 130,
+      "text": "모든 예측 평가\n1,684,742건\n평균 좌석 오차 3.23619석",
+      "fontSize": 21,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "compare"
+      "containerId": "box-3",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-4",
+      "type": "rectangle",
+      "x": 695,
+      "y": 145,
+      "width": 455,
+      "height": 150,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-4_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "average-note",
-      "x": 80,
-      "y": 480,
-      "text": "평균만 보면 차이는 약 0.01석이었다.",
-      "fontSize": 26,
-      "fontFamily": 1
+      "id": "box-4_label",
+      "x": 705,
+      "y": 155,
+      "width": 435,
+      "height": 130,
+      "text": "60초 간격 평가\n688,694건\n평균 좌석 오차 3.24658석",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-4",
+      "strokeColor": "#222222"
     },
     {
-      "type": "line",
-      "id": "divider",
-      "x": 80,
-      "y": 545,
-      "width": 1440,
+      "id": "arrow-5",
+      "type": "arrow",
+      "x": 500,
+      "y": 220,
+      "width": 195,
       "height": 0,
       "points": [
         [
@@ -153,251 +116,275 @@
           0
         ],
         [
-          1440,
+          195,
+          0
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-3",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-4",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "text-6",
+      "type": "text",
+      "x": 520,
+      "y": 175,
+      "text": "등록 59.12% 감소",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "line-7",
+      "type": "line",
+      "x": 45,
+      "y": 348,
+      "width": 1105,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1105,
           0
         ]
       ],
       "strokeColor": "#707070",
       "strokeWidth": 1,
-      "roughness": 0
+      "strokeStyle": "solid",
+      "roughness": 1
     },
     {
+      "id": "text-8",
       "type": "text",
-      "id": "case-title",
-      "x": 80,
-      "y": 595,
-      "text": "근데 개별 예보를 보면 결과가 달라졌다",
-      "fontSize": 30,
-      "fontFamily": 1
+      "x": 45,
+      "y": 380,
+      "text": "3500번 · 08:41 예측 → 08:55 관측",
+      "fontSize": 23,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
     },
     {
-      "type": "text",
-      "id": "case-subtitle",
-      "x": 82,
-      "y": 643,
-      "text": "3500번  /  08:41 예보 → 08:55 도착",
-      "fontSize": 18,
-      "strokeColor": "#707070",
-      "fontFamily": 1
-    },
-    {
+      "id": "box-9",
       "type": "rectangle",
-      "id": "actual",
-      "x": 650,
-      "y": 705,
-      "width": 300,
-      "height": 120,
-      "backgroundColor": "#1e1e1e",
+      "x": 450,
+      "y": 478,
+      "width": 290,
+      "height": 105,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
       "fillStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "actual_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-9_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "actual_label",
-      "x": 660,
-      "y": 715,
-      "width": 280,
-      "height": 100,
+      "id": "box-9_label",
+      "x": 460,
+      "y": 488,
+      "width": 270,
+      "height": 85,
       "text": "실제 잔여석\n23석",
-      "fontSize": 24,
+      "fontSize": 23,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "actual",
+      "containerId": "box-9",
       "strokeColor": "#ffffff"
     },
     {
+      "id": "box-10",
       "type": "rectangle",
-      "id": "base-result",
-      "x": 110,
-      "y": 705,
-      "width": 370,
-      "height": 170,
+      "x": 50,
+      "y": 465,
+      "width": 300,
+      "height": 135,
+      "strokeColor": "#222222",
       "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "base-result_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-10_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "base-result_label",
-      "x": 120,
-      "y": 715,
-      "width": 350,
-      "height": 150,
+      "id": "box-10_label",
+      "x": 60,
+      "y": 475,
+      "width": 280,
+      "height": 115,
       "text": "모든 평가 유지\n예측 24.37석\n오차 1.37석",
-      "fontSize": 24,
+      "fontSize": 21,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "base-result"
+      "containerId": "box-10",
+      "strokeColor": "#222222"
     },
     {
+      "id": "box-11",
       "type": "rectangle",
-      "id": "sample-result",
-      "x": 1120,
-      "y": 705,
-      "width": 370,
-      "height": 170,
-      "backgroundColor": "#f6f7f8",
+      "x": 840,
+      "y": 465,
+      "width": 300,
+      "height": 135,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
+      "strokeWidth": 1,
       "strokeStyle": "dashed",
-      "boundElements": [
-        {
-          "id": "sample-result_label",
-          "type": "text"
-        }
-      ],
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-11_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "sample-result_label",
-      "x": 1130,
-      "y": 715,
-      "width": 350,
-      "height": 150,
+      "id": "box-11_label",
+      "x": 850,
+      "y": 475,
+      "width": 280,
+      "height": 115,
       "text": "평가 횟수 축소\n예측 17.34석\n오차 5.66석",
-      "fontSize": 24,
+      "fontSize": 21,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "sample-result"
+      "containerId": "box-11",
+      "strokeColor": "#222222"
     },
     {
+      "id": "arrow-12",
       "type": "arrow",
-      "id": "base-to-actual",
-      "x": 480,
-      "y": 790,
-      "width": 160,
-      "height": -25,
+      "x": 350,
+      "y": 530,
+      "width": 100,
+      "height": 0,
       "points": [
         [
           0,
           0
         ],
         [
-          160,
-          -25
-        ]
-      ],
-      "endArrowhead": "arrow",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "base-to-actual_label",
-          "type": "text"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "base-to-actual_label",
-      "x": 490,
-      "y": 800,
-      "width": 140,
-      "height": -45,
-      "text": "가까움",
-      "fontSize": 16,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "base-to-actual"
-    },
-    {
-      "type": "arrow",
-      "id": "sample-to-actual",
-      "x": 1120,
-      "y": 790,
-      "width": -160,
-      "height": -25,
-      "points": [
-        [
-          0,
+          100,
           0
-        ],
-        [
-          -160,
-          -25
         ]
       ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
       "endArrowhead": "arrow",
-      "roughness": 1,
-      "strokeStyle": "dashed",
-      "boundElements": [
-        {
-          "id": "sample-to-actual_label",
-          "type": "text"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "sample-to-actual_label",
-      "x": 1130,
-      "y": 800,
-      "width": -180,
-      "height": -45,
-      "text": "차이 커짐",
-      "fontSize": 16,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "sample-to-actual"
-    },
-    {
-      "type": "rectangle",
-      "id": "conclusion",
-      "x": 250,
-      "y": 960,
-      "width": 1100,
-      "height": 120,
-      "backgroundColor": "#f6f7f8",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "conclusion_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
+      "startBinding": {
+        "elementId": "box-10",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-9",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
       }
     },
     {
+      "id": "arrow-13",
+      "type": "arrow",
+      "x": 840,
+      "y": 530,
+      "width": 100,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -100,
+          0
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-11",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-9",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "text-14",
       "type": "text",
-      "id": "conclusion_label",
-      "x": 260,
-      "y": 970,
-      "width": 1080,
-      "height": 100,
-      "text": "375건 중 332건의 오차가 커졌다\n→ 평가 횟수는 줄이지 않고 저장 형식만 줄이기로 했다",
-      "fontSize": 26,
+      "x": 45,
+      "y": 660,
+      "text": "3석 넘게 달라진 375건 중 332건은 오차가 커졌어요",
+      "fontSize": 23,
       "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "conclusion"
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
     }
   ],
   "appState": {

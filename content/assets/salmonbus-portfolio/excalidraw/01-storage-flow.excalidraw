@@ -1,0 +1,514 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "excalidraw-cli",
+  "elements": [
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 30,
+      "y": 25,
+      "text": "차량 A의 평가 기록은 한 페이지에 모이지 않아요",
+      "fontSize": 28,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-2",
+      "type": "text",
+      "x": 30,
+      "y": 70,
+      "text": "설명용 배치 · PostgreSQL은 여러 차량의 행을 페이지 단위로 저장",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#707070",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-3",
+      "type": "rectangle",
+      "x": 35,
+      "y": 170,
+      "width": 185,
+      "height": 80,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-3_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-3_label",
+      "x": 45,
+      "y": 180,
+      "width": 165,
+      "height": 60,
+      "text": "조회 대상\n차량 A",
+      "fontSize": 23,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-3",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "box-4",
+      "type": "rectangle",
+      "x": 295,
+      "y": 130,
+      "width": 245,
+      "height": 165,
+      "strokeColor": "#222222",
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-5",
+      "type": "text",
+      "x": 309,
+      "y": 143,
+      "text": "페이지 1",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-6",
+      "type": "rectangle",
+      "x": 310,
+      "y": 190,
+      "width": 97,
+      "height": 65,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-6_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-6_label",
+      "x": 320,
+      "y": 200,
+      "width": 77,
+      "height": 45,
+      "text": "A 평가",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-6",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "box-7",
+      "type": "rectangle",
+      "x": 425,
+      "y": 190,
+      "width": 99,
+      "height": 65,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-7_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-7_label",
+      "x": 435,
+      "y": 200,
+      "width": 79,
+      "height": 45,
+      "text": "차량 B",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-7",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "arrow-8",
+      "type": "arrow",
+      "x": 220,
+      "y": 210,
+      "width": 90,
+      "height": 10,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          90,
+          10
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "box-9",
+      "type": "rectangle",
+      "x": 585,
+      "y": 130,
+      "width": 245,
+      "height": 165,
+      "strokeColor": "#222222",
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-10",
+      "type": "text",
+      "x": 599,
+      "y": 143,
+      "text": "페이지 2",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-11",
+      "type": "rectangle",
+      "x": 600,
+      "y": 190,
+      "width": 97,
+      "height": 65,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-11_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-11_label",
+      "x": 610,
+      "y": 200,
+      "width": 77,
+      "height": 45,
+      "text": "A 평가",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-11",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "box-12",
+      "type": "rectangle",
+      "x": 715,
+      "y": 190,
+      "width": 99,
+      "height": 65,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-12_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-12_label",
+      "x": 725,
+      "y": 200,
+      "width": 79,
+      "height": 45,
+      "text": "차량 C",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-12",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-13",
+      "type": "rectangle",
+      "x": 875,
+      "y": 130,
+      "width": 245,
+      "height": 165,
+      "strokeColor": "#222222",
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-14",
+      "type": "text",
+      "x": 889,
+      "y": 143,
+      "text": "페이지 3",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-15",
+      "type": "rectangle",
+      "x": 890,
+      "y": 190,
+      "width": 97,
+      "height": 65,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-15_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-15_label",
+      "x": 900,
+      "y": 200,
+      "width": 77,
+      "height": 45,
+      "text": "A 평가",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-15",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "box-16",
+      "type": "rectangle",
+      "x": 1005,
+      "y": 190,
+      "width": 99,
+      "height": 65,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-16_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-16_label",
+      "x": 1015,
+      "y": 200,
+      "width": 79,
+      "height": 45,
+      "text": "차량 D",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-16",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "line-17",
+      "type": "line",
+      "x": 150,
+      "y": 170,
+      "width": 0,
+      "height": 60,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          -60
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "id": "line-18",
+      "type": "line",
+      "x": 150,
+      "y": 110,
+      "width": 788,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          788,
+          0
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1
+    },
+    {
+      "id": "arrow-19",
+      "type": "arrow",
+      "x": 648,
+      "y": 110,
+      "width": 0,
+      "height": 80,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          80
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "arrow-20",
+      "type": "arrow",
+      "x": 938,
+      "y": 110,
+      "width": 0,
+      "height": 80,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          80
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "text-21",
+      "type": "text",
+      "x": 310,
+      "y": 335,
+      "text": "같은 차량의 기록을 읽어도 여러 페이지에 접근할 수 있어요",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}

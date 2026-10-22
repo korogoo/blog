@@ -4,317 +4,216 @@
   "source": "excalidraw-cli",
   "elements": [
     {
+      "id": "text-1",
       "type": "text",
-      "id": "title",
-      "x": 70,
-      "y": 55,
-      "text": "현재 기준을 찾기 어려웠던 이유",
-      "fontSize": 36,
-      "fontFamily": 1
+      "x": 30,
+      "y": 20,
+      "text": "현재 정책과 논의 중인 내용을 분리해요",
+      "fontSize": 28,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
     },
     {
+      "id": "text-2",
       "type": "text",
-      "id": "subtitle",
-      "x": 72,
-      "y": 112,
-      "text": "현재 정책, 검토 중인 제안, 개인 메모가 같은 공간에 남아 있었다",
+      "x": 30,
+      "y": 62,
+      "text": "팀 문서 구조의 변경 전후",
       "fontSize": 18,
+      "fontFamily": 5,
       "strokeColor": "#707070",
-      "fontFamily": 1
+      "textAlign": "left",
+      "roughness": 1
     },
     {
-      "type": "rectangle",
-      "id": "confluence",
-      "x": 70,
-      "y": 210,
-      "width": 560,
-      "height": 560,
-      "backgroundColor": "#ffffff",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "confluence_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
+      "id": "text-3",
       "type": "text",
-      "id": "confluence_label",
-      "x": 80,
-      "y": 220,
-      "width": 540,
-      "height": 540,
-      "text": "Confluence 문서 공간",
-      "fontSize": 25,
+      "x": 45,
+      "y": 120,
+      "text": "변경 전 · 같은 문서 공간",
+      "fontSize": 23,
       "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "confluence"
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
     },
     {
+      "id": "box-4",
       "type": "rectangle",
-      "id": "current",
-      "x": 140,
-      "y": 330,
-      "width": 420,
-      "height": 100,
-      "backgroundColor": "#ffffff",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "current_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "current_label",
-      "x": 150,
-      "y": 340,
-      "width": 400,
-      "height": 80,
-      "text": "현재 정책으로 보이는 문서",
-      "fontSize": 21,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "current"
-    },
-    {
-      "type": "rectangle",
-      "id": "proposal",
-      "x": 140,
-      "y": 470,
-      "width": 420,
-      "height": 100,
+      "x": 40,
+      "y": 175,
+      "width": 440,
+      "height": 385,
+      "strokeColor": "#222222",
       "backgroundColor": "#f6f7f8",
       "fillStyle": "solid",
       "roughness": 1,
-      "strokeStyle": "dashed",
-      "boundElements": [
-        {
-          "id": "proposal_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
       }
     },
     {
-      "type": "text",
-      "id": "proposal_label",
-      "x": 150,
-      "y": 480,
-      "width": 400,
-      "height": 80,
-      "text": "아직 합의하지 않은 제안",
-      "fontSize": 21,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "proposal"
-    },
-    {
+      "id": "box-5",
       "type": "rectangle",
-      "id": "memo",
-      "x": 140,
-      "y": 610,
-      "width": 420,
-      "height": 100,
-      "backgroundColor": "#f6f7f8",
+      "x": 75,
+      "y": 215,
+      "width": 360,
+      "height": 75,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
-      "strokeStyle": "dashed",
-      "boundElements": [
-        {
-          "id": "memo_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-5_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "memo_label",
-      "x": 150,
-      "y": 620,
-      "width": 400,
-      "height": 80,
-      "text": "개인이 정리한 메모",
-      "fontSize": 21,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "memo"
-    },
-    {
-      "type": "rectangle",
-      "id": "pr",
-      "x": 740,
-      "y": 250,
+      "id": "box-5_label",
+      "x": 85,
+      "y": 225,
       "width": 340,
-      "height": 190,
+      "height": 55,
+      "text": "현재 정책으로 보이는 문서",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-5",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-6",
+      "type": "rectangle",
+      "x": 75,
+      "y": 330,
+      "width": 360,
+      "height": 75,
+      "strokeColor": "#222222",
       "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "pr_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
       "roundness": {
         "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "pr_label",
-      "x": 750,
-      "y": 260,
-      "width": 320,
-      "height": 170,
-      "text": "새 PR\n\n코드와 테스트는 바뀌었지만\n정책 변경 여부는 표시되지 않음",
-      "fontSize": 21,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "pr"
-    },
-    {
-      "type": "arrow",
-      "id": "docs-to-reviewer",
-      "x": 630,
-      "y": 520,
-      "width": 560,
-      "height": 130,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          560,
-          130
-        ]
-      ],
-      "endArrowhead": "arrow",
-      "roughness": 1,
+      },
       "boundElements": [
         {
-          "id": "docs-to-reviewer_label",
+          "id": "box-6_label",
           "type": "text"
         }
       ]
     },
     {
       "type": "text",
-      "id": "docs-to-reviewer_label",
-      "x": 640,
-      "y": 530,
-      "width": 540,
-      "height": 110,
-      "text": "어느 문서가 기준인지 먼저 판단",
-      "fontSize": 16,
+      "id": "box-6_label",
+      "x": 85,
+      "y": 340,
+      "width": 340,
+      "height": 55,
+      "text": "합의 전 제안",
+      "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "docs-to-reviewer"
+      "containerId": "box-6",
+      "strokeColor": "#222222"
     },
     {
-      "type": "arrow",
-      "id": "pr-to-reviewer",
-      "x": 1080,
-      "y": 345,
-      "width": 170,
-      "height": 240,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          170,
-          240
-        ]
-      ],
-      "endArrowhead": "arrow",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "pr-to-reviewer_label",
-          "type": "text"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "pr-to-reviewer_label",
-      "x": 1090,
-      "y": 355,
-      "width": 150,
-      "height": 220,
-      "text": "코드와 직접 대조",
-      "fontSize": 16,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "pr-to-reviewer"
-    },
-    {
-      "type": "ellipse",
-      "id": "reviewer",
-      "x": 1190,
-      "y": 540,
-      "width": 300,
-      "height": 220,
-      "backgroundColor": "#1e1e1e",
+      "id": "box-7",
+      "type": "rectangle",
+      "x": 75,
+      "y": 445,
+      "width": 360,
+      "height": 75,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "reviewer_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-7_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "reviewer_label",
-      "x": 1200,
-      "y": 550,
-      "width": 280,
-      "height": 200,
-      "text": "PR 리뷰어\n\n이번 변경이\n정책 변경인가?",
-      "fontSize": 22,
+      "id": "box-7_label",
+      "x": 85,
+      "y": 455,
+      "width": 340,
+      "height": 55,
+      "text": "개인 메모",
+      "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "reviewer",
+      "containerId": "box-7",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-8",
+      "type": "rectangle",
+      "x": 525,
+      "y": 300,
+      "width": 215,
+      "height": 130,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-8_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-8_label",
+      "x": 535,
+      "y": 310,
+      "width": 195,
+      "height": 110,
+      "text": "PR 리뷰어\n어느 문서가\n현재 기준일까?",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-8",
       "strokeColor": "#ffffff"
     },
     {
-      "type": "line",
-      "id": "divider",
-      "x": 70,
-      "y": 850,
-      "width": 1420,
+      "id": "arrow-9",
+      "type": "arrow",
+      "x": 480,
+      "y": 365,
+      "width": 45,
       "height": 0,
       "points": [
         [
@@ -322,126 +221,234 @@
           0
         ],
         [
-          1420,
+          45,
           0
         ]
       ],
-      "strokeColor": "#707070",
+      "strokeColor": "#222222",
       "strokeWidth": 1,
-      "roughness": 0
-    },
-    {
-      "type": "text",
-      "id": "split-title",
-      "x": 70,
-      "y": 900,
-      "text": "그래서 문서의 역할을 나누려고 했다",
-      "fontSize": 30,
-      "fontFamily": 1
-    },
-    {
-      "type": "rectangle",
-      "id": "canonical",
-      "x": 70,
-      "y": 980,
-      "width": 410,
-      "height": 130,
-      "backgroundColor": "#1e1e1e",
-      "fillStyle": "solid",
+      "strokeStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "canonical_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-4",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
       }
     },
     {
+      "id": "text-10",
       "type": "text",
-      "id": "canonical_label",
-      "x": 80,
-      "y": 990,
-      "width": 390,
-      "height": 110,
+      "x": 810,
+      "y": 120,
+      "text": "변경 후 · 역할 분리",
+      "fontSize": 23,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-11",
+      "type": "rectangle",
+      "x": 800,
+      "y": 175,
+      "width": 385,
+      "height": 115,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-11_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-11_label",
+      "x": 810,
+      "y": 185,
+      "width": 365,
+      "height": 95,
       "text": "최종 도메인 문서\n현재 유효한 정책",
       "fontSize": 22,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "canonical",
+      "containerId": "box-11",
       "strokeColor": "#ffffff"
     },
     {
-      "type": "rectangle",
-      "id": "history",
-      "x": 585,
-      "y": 980,
-      "width": 410,
+      "id": "arrow-12",
+      "type": "arrow",
+      "x": 740,
+      "y": 365,
+      "width": 60,
       "height": 130,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          -130
+        ],
+        [
+          60,
+          -130
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-11",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "box-13",
+      "type": "rectangle",
+      "x": 800,
+      "y": 325,
+      "width": 385,
+      "height": 105,
+      "strokeColor": "#222222",
       "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "history_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-13_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "history_label",
-      "x": 595,
-      "y": 990,
-      "width": 390,
-      "height": 110,
-      "text": "변경 이력\n이전과 이후, 근거 PR",
-      "fontSize": 22,
+      "id": "box-13_label",
+      "x": 810,
+      "y": 335,
+      "width": 365,
+      "height": 85,
+      "text": "변경 이력\n이전·새 정책 / 근거 PR",
+      "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "history"
+      "containerId": "box-13",
+      "strokeColor": "#222222"
     },
     {
+      "id": "box-14",
       "type": "rectangle",
-      "id": "working-note",
-      "x": 1100,
-      "y": 980,
-      "width": 390,
-      "height": 130,
-      "backgroundColor": "#f6f7f8",
+      "x": 800,
+      "y": 465,
+      "width": 385,
+      "height": 105,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
+      "strokeWidth": 1,
       "strokeStyle": "dashed",
-      "boundElements": [
-        {
-          "id": "working-note_label",
-          "type": "text"
-        }
-      ],
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-14_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "working-note_label",
-      "x": 1110,
-      "y": 990,
-      "width": 370,
-      "height": 110,
-      "text": "제안과 메모\n합의 전에는 현재 정책과 분리",
-      "fontSize": 21,
+      "id": "box-14_label",
+      "x": 810,
+      "y": 475,
+      "width": 365,
+      "height": 85,
+      "text": "제안·개인 메모\n합의 전에는 별도 보관",
+      "fontSize": 20,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "working-note"
+      "containerId": "box-14",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "line-15",
+      "type": "line",
+      "x": 45,
+      "y": 640,
+      "width": 1140,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1140,
+          0
+        ]
+      ],
+      "strokeColor": "#707070",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1
+    },
+    {
+      "id": "text-16",
+      "type": "text",
+      "x": 45,
+      "y": 680,
+      "text": "PR 리뷰어는 먼저 최종 문서의 현재 정책을 읽어요",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
     }
   ],
   "appState": {

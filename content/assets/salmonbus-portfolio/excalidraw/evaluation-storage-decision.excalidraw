@@ -4,362 +4,225 @@
   "source": "excalidraw-cli",
   "elements": [
     {
+      "id": "text-1",
       "type": "text",
-      "id": "title",
-      "x": 70,
-      "y": 55,
-      "text": "정확도에 쓰는 평가는 유지하고, 중복 저장만 줄였다",
-      "fontSize": 36,
-      "fontFamily": 1
-    },
-    {
-      "type": "text",
-      "id": "subtitle",
-      "x": 72,
-      "y": 112,
-      "text": "같은 차량이 같은 정류장에 있고 15초마다 12개 예보를 만드는 설명용 흐름",
-      "fontSize": 18,
-      "strokeColor": "#707070",
-      "fontFamily": 1
-    },
-    {
-      "type": "rectangle",
-      "id": "observation",
-      "x": 70,
-      "y": 280,
-      "width": 260,
-      "height": 130,
-      "backgroundColor": "#ffffff",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "observation_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "observation_label",
-      "x": 80,
-      "y": 290,
-      "width": 240,
-      "height": 110,
-      "text": "차량 관측\n10:00:15",
-      "fontSize": 24,
+      "x": 30,
+      "y": 20,
+      "text": "평가는 유지하고 저장하는 정보만 나눠요",
+      "fontSize": 28,
       "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "observation"
-    },
-    {
-      "type": "arrow",
-      "id": "a1",
-      "x": 330,
-      "y": 345,
-      "width": 150,
-      "height": 0,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          150,
-          0
-        ]
-      ],
-      "endArrowhead": "arrow",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "a1_label",
-          "type": "text"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "a1_label",
-      "x": 340,
-      "y": 355,
-      "width": 130,
-      "height": 40,
-      "text": "12개 예보",
-      "fontSize": 16,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "a1"
-    },
-    {
-      "type": "rectangle",
-      "id": "evaluate",
-      "x": 480,
-      "y": 280,
-      "width": 300,
-      "height": 130,
-      "backgroundColor": "#1e1e1e",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "evaluate_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "evaluate_label",
-      "x": 490,
-      "y": 290,
-      "width": 280,
-      "height": 110,
-      "text": "12개 모두 정산\n당일 보정에 반영",
-      "fontSize": 24,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "evaluate",
-      "strokeColor": "#ffffff"
-    },
-    {
-      "type": "arrow",
-      "id": "a2",
-      "x": 780,
-      "y": 345,
-      "width": 140,
-      "height": 0,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          140,
-          0
-        ]
-      ],
-      "endArrowhead": "arrow",
+      "strokeColor": "#222222",
+      "textAlign": "left",
       "roughness": 1
     },
     {
-      "type": "diamond",
-      "id": "detail-check",
-      "x": 920,
-      "y": 245,
-      "width": 230,
-      "height": 200,
-      "backgroundColor": "#ffffff",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "detail-check_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
+      "id": "text-2",
       "type": "text",
-      "id": "detail-check_label",
-      "x": 930,
-      "y": 255,
-      "width": 210,
-      "height": 180,
-      "text": "상세 저장이\n필요한가?",
-      "fontSize": 23,
+      "x": 30,
+      "y": 63,
+      "text": "설명용 흐름: 같은 차량을 15초마다 관측하고 매번 예측 12개 생성",
+      "fontSize": 18,
       "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "detail-check"
-    },
-    {
-      "type": "text",
-      "id": "conditions-title",
-      "x": 900,
-      "y": 500,
-      "text": "상세 저장 조건",
-      "fontSize": 22,
-      "fontFamily": 1
-    },
-    {
-      "type": "text",
-      "id": "conditions",
-      "x": 900,
-      "y": 545,
-      "text": "60초 경과\n정류장 / 방향 / 노선 판본 / 모델 변경\n한 정류장 앞 예보\n방향 미확인 / 과거 재처리\n정상 정산이 아닌 결과",
-      "fontSize": 19,
       "strokeColor": "#707070",
-      "fontFamily": 1
+      "textAlign": "left",
+      "roughness": 1
     },
     {
-      "type": "arrow",
-      "id": "yes",
-      "x": 1150,
-      "y": 300,
-      "width": 170,
-      "height": -80,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          170,
-          -80
-        ]
-      ],
-      "endArrowhead": "arrow",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "yes_label",
-          "type": "text"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "yes_label",
-      "x": 1160,
-      "y": 310,
-      "width": 150,
-      "height": -100,
-      "text": "예",
-      "fontSize": 16,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "yes"
-    },
-    {
+      "id": "box-3",
       "type": "rectangle",
-      "id": "full",
-      "x": 1320,
-      "y": 140,
-      "width": 240,
-      "height": 190,
+      "x": 40,
+      "y": 175,
+      "width": 190,
+      "height": 98,
+      "strokeColor": "#222222",
       "backgroundColor": "#ffffff",
       "fillStyle": "solid",
       "roughness": 1,
-      "boundElements": [
-        {
-          "id": "full_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "full_label",
-      "x": 1330,
-      "y": 150,
-      "width": 220,
-      "height": 170,
-      "text": "전체 상세 결과\n\n차량 / 정류장 정보까지\n기존 형식으로 저장",
-      "fontSize": 20,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "full"
-    },
-    {
-      "type": "arrow",
-      "id": "no",
-      "x": 1150,
-      "y": 390,
-      "width": 170,
-      "height": 80,
-      "points": [
-        [
-          0,
-          0
-        ],
-        [
-          170,
-          80
-        ]
-      ],
-      "endArrowhead": "arrow",
-      "roughness": 1,
-      "strokeStyle": "dashed",
+      },
       "boundElements": [
         {
-          "id": "no_label",
+          "id": "box-3_label",
           "type": "text"
         }
       ]
     },
     {
       "type": "text",
-      "id": "no_label",
-      "x": 1160,
-      "y": 400,
-      "width": 150,
-      "height": 60,
-      "text": "아니오",
-      "fontSize": 16,
+      "id": "box-3_label",
+      "x": 50,
+      "y": 185,
+      "width": 170,
+      "height": 78,
+      "text": "차량 관측\n10:00:15",
+      "fontSize": 22,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "no"
+      "containerId": "box-3",
+      "strokeColor": "#222222"
     },
     {
+      "id": "box-4",
       "type": "rectangle",
-      "id": "compact",
-      "x": 1320,
-      "y": 410,
-      "width": 240,
-      "height": 215,
-      "backgroundColor": "#f6f7f8",
+      "x": 330,
+      "y": 165,
+      "width": 270,
+      "height": 120,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
       "fillStyle": "solid",
       "roughness": 1,
-      "strokeStyle": "dashed",
-      "boundElements": [
-        {
-          "id": "compact_label",
-          "type": "text"
-        }
-      ],
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
       "roundness": {
         "type": 3
-      }
+      },
+      "boundElements": [
+        {
+          "id": "box-4_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "compact_label",
-      "x": 1330,
-      "y": 420,
-      "width": 220,
-      "height": 195,
-      "text": "최소 결과\n\n예보 ID / 도착 관측 ID\n실제 잔여석 / 정산 시각\n도착 시각 / 방향",
+      "id": "box-4_label",
+      "x": 340,
+      "y": 175,
+      "width": 250,
+      "height": 100,
+      "text": "12개 모두 평가\n당일 보정에 반영",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-4",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "box-5",
+      "type": "diamond",
+      "x": 700,
+      "y": 156,
+      "width": 190,
+      "height": 140,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-5_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-5_label",
+      "x": 710,
+      "y": 166,
+      "width": 170,
+      "height": 120,
+      "text": "상세 저장\n조건?",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-5",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-6",
+      "type": "rectangle",
+      "x": 970,
+      "y": 100,
+      "width": 250,
+      "height": 120,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-6_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-6_label",
+      "x": 980,
+      "y": 110,
+      "width": 230,
+      "height": 100,
+      "text": "상세 결과\n차량·정류장 정보 포함",
       "fontSize": 19,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
-      "containerId": "compact"
+      "containerId": "box-6",
+      "strokeColor": "#222222"
     },
     {
-      "type": "line",
-      "id": "divider",
-      "x": 70,
-      "y": 720,
-      "width": 1490,
+      "id": "box-7",
+      "type": "rectangle",
+      "x": 970,
+      "y": 290,
+      "width": 250,
+      "height": 130,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-7_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-7_label",
+      "x": 980,
+      "y": 300,
+      "width": 230,
+      "height": 110,
+      "text": "최소 결과\n예측·도착 관측 ID\n잔여석·시각",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-7",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "arrow-8",
+      "type": "arrow",
+      "x": 230,
+      "y": 224,
+      "width": 100,
       "height": 0,
       "points": [
         [
@@ -367,135 +230,360 @@
           0
         ],
         [
-          1490,
+          100,
+          0
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-3",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-4",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-9",
+      "type": "arrow",
+      "x": 600,
+      "y": 224,
+      "width": 100,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          0
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-4",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-5",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-10",
+      "type": "arrow",
+      "x": 890,
+      "y": 195,
+      "width": 80,
+      "height": 35,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          80,
+          -35
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-5",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-6",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-11",
+      "type": "arrow",
+      "x": 890,
+      "y": 257,
+      "width": 80,
+      "height": 93,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          80,
+          93
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-5",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-7",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "text-12",
+      "type": "text",
+      "x": 907,
+      "y": 145,
+      "text": "예",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-13",
+      "type": "text",
+      "x": 907,
+      "y": 305,
+      "text": "아니오",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-14",
+      "type": "text",
+      "x": 335,
+      "y": 338,
+      "text": "상세 조건",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-15",
+      "type": "text",
+      "x": 335,
+      "y": 378,
+      "text": "60초 경과 · 정류장/방향/노선/모델 변경",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-16",
+      "type": "text",
+      "x": 335,
+      "y": 411,
+      "text": "한 정류장 앞 · 과거 재처리 · 비정상 정산",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "line-17",
+      "type": "line",
+      "x": 45,
+      "y": 485,
+      "width": 1165,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1165,
           0
         ]
       ],
       "strokeColor": "#707070",
       "strokeWidth": 1,
-      "roughness": 0
+      "strokeStyle": "solid",
+      "roughness": 1
     },
     {
+      "id": "text-18",
       "type": "text",
-      "id": "results-title",
-      "x": 70,
-      "y": 770,
-      "text": "같은 1,684,742개 예보를 비교한 재생 실험",
-      "fontSize": 30,
-      "fontFamily": 1
-    },
-    {
-      "type": "rectangle",
-      "id": "metric1",
-      "x": 70,
-      "y": 850,
-      "width": 430,
-      "height": 170,
-      "backgroundColor": "#ffffff",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "metric1_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "metric1_label",
-      "x": 80,
-      "y": 860,
-      "width": 410,
-      "height": 150,
-      "text": "좌석 확률 분포가\n달라진 예보\n\n0건",
-      "fontSize": 24,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "metric1"
-    },
-    {
-      "type": "rectangle",
-      "id": "metric2",
-      "x": 585,
-      "y": 850,
-      "width": 430,
-      "height": 170,
-      "backgroundColor": "#ffffff",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "boundElements": [
-        {
-          "id": "metric2_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "metric2_label",
-      "x": 595,
-      "y": 860,
-      "width": 410,
-      "height": 150,
-      "text": "정상 정산 상세 저장\n\n1,411,497건 → 586,954건",
-      "fontSize": 24,
-      "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "metric2"
-    },
-    {
-      "type": "rectangle",
-      "id": "metric3",
-      "x": 1100,
-      "y": 850,
-      "width": 460,
-      "height": 170,
-      "backgroundColor": "#f6f7f8",
-      "fillStyle": "solid",
-      "roughness": 1,
-      "strokeStyle": "dashed",
-      "boundElements": [
-        {
-          "id": "metric3_label",
-          "type": "text"
-        }
-      ],
-      "roundness": {
-        "type": 3
-      }
-    },
-    {
-      "type": "text",
-      "id": "metric3_label",
-      "x": 1110,
-      "y": 860,
-      "width": 440,
-      "height": 150,
-      "text": "PostgreSQL 18 모의 10만 행\n인덱스 포함 저장 공간\n\n약 27% 감소",
+      "x": 45,
+      "y": 520,
+      "text": "같은 1,684,742개 예측을 다시 처리한 결과",
       "fontSize": 22,
       "fontFamily": 5,
-      "textAlign": "center",
-      "verticalAlign": "middle",
-      "containerId": "metric3"
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-19",
+      "type": "rectangle",
+      "x": 45,
+      "y": 585,
+      "width": 325,
+      "height": 100,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-19_label",
+          "type": "text"
+        }
+      ]
     },
     {
       "type": "text",
-      "id": "scope",
-      "x": 1100,
-      "y": 1055,
-      "text": "운영 DB 전체 감소율이 아닌 저장 형식 비교",
-      "fontSize": 16,
+      "id": "box-19_label",
+      "x": 55,
+      "y": 595,
+      "width": 305,
+      "height": 80,
+      "text": "달라진 예측 분포\n0건",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-19",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-20",
+      "type": "rectangle",
+      "x": 445,
+      "y": 585,
+      "width": 340,
+      "height": 100,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-20_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-20_label",
+      "x": 455,
+      "y": 595,
+      "width": 320,
+      "height": 80,
+      "text": "상세 저장 대상\n1,411,497 → 586,954건",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-20",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-21",
+      "type": "rectangle",
+      "x": 860,
+      "y": 585,
+      "width": 350,
+      "height": 100,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "dashed",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-21_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-21_label",
+      "x": 870,
+      "y": 595,
+      "width": 330,
+      "height": 80,
+      "text": "모의 10만 행 저장 공간\n인덱스 포함 27.21% 감소",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-21",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "text-22",
+      "type": "text",
+      "x": 45,
+      "y": 718,
+      "text": "마지막 값은 운영 DB 수치가 아니라 PostgreSQL 18의 모의 데이터 비교예요",
+      "fontSize": 17,
+      "fontFamily": 5,
       "strokeColor": "#707070",
-      "fontFamily": 1
+      "textAlign": "left",
+      "roughness": 1
     }
   ],
   "appState": {

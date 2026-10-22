@@ -1,0 +1,415 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "excalidraw-cli",
+  "elements": [
+    {
+      "id": "text-1",
+      "type": "text",
+      "x": 30,
+      "y": 20,
+      "text": "스레드가 달라도 DB 자원은 공유해요",
+      "fontSize": 28,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "text-2",
+      "type": "text",
+      "x": 30,
+      "y": 63,
+      "text": "같은 worker JVM 안의 세 실행 경로",
+      "fontSize": 18,
+      "fontFamily": 5,
+      "strokeColor": "#707070",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-3",
+      "type": "rectangle",
+      "x": 35,
+      "y": 120,
+      "width": 720,
+      "height": 495,
+      "strokeColor": "#222222",
+      "backgroundColor": "#f6f7f8",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      }
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "x": 55,
+      "y": 140,
+      "text": "worker",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    },
+    {
+      "id": "box-5",
+      "type": "rectangle",
+      "x": 75,
+      "y": 210,
+      "width": 290,
+      "height": 82,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-5_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-5_label",
+      "x": 85,
+      "y": 220,
+      "width": 270,
+      "height": 62,
+      "text": "collection · 수집",
+      "fontSize": 21,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-5",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-6",
+      "type": "rectangle",
+      "x": 75,
+      "y": 342,
+      "width": 290,
+      "height": 82,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-6_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-6_label",
+      "x": 85,
+      "y": 352,
+      "width": 270,
+      "height": 62,
+      "text": "processing · 예측/평가",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-6",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-7",
+      "type": "rectangle",
+      "x": 75,
+      "y": 475,
+      "width": 290,
+      "height": 82,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-7_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-7_label",
+      "x": 85,
+      "y": 485,
+      "width": 270,
+      "height": 62,
+      "text": "calibration · 통계/이관",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-7",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-8",
+      "type": "rectangle",
+      "x": 855,
+      "y": 210,
+      "width": 315,
+      "height": 160,
+      "strokeColor": "#222222",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-8_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-8_label",
+      "x": 865,
+      "y": 220,
+      "width": 295,
+      "height": 140,
+      "text": "Hikari 연결 풀\n세 작업이 함께 사용",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-8",
+      "strokeColor": "#222222"
+    },
+    {
+      "id": "box-9",
+      "type": "rectangle",
+      "x": 855,
+      "y": 465,
+      "width": 315,
+      "height": 110,
+      "strokeColor": "#222222",
+      "backgroundColor": "#222222",
+      "fillStyle": "solid",
+      "roughness": 1,
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "box-9_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "box-9_label",
+      "x": 865,
+      "y": 475,
+      "width": 295,
+      "height": 90,
+      "text": "같은 RDS\n입출력·잠금 공유",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "box-9",
+      "strokeColor": "#ffffff"
+    },
+    {
+      "id": "arrow-10",
+      "type": "arrow",
+      "x": 365,
+      "y": 251,
+      "width": 490,
+      "height": 1,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          490,
+          -1
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-5",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-11",
+      "type": "arrow",
+      "x": 365,
+      "y": 383,
+      "width": 490,
+      "height": 98,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          490,
+          -98
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-6",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-12",
+      "type": "arrow",
+      "x": 365,
+      "y": 516,
+      "width": 490,
+      "height": 186,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          490,
+          -186
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-7",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "id": "arrow-13",
+      "type": "arrow",
+      "x": 1012,
+      "y": 370,
+      "width": 0,
+      "height": 95,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          95
+        ]
+      ],
+      "strokeColor": "#222222",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "box-8",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "box-9",
+        "fixedPoint": [
+          0.5,
+          0
+        ]
+      }
+    },
+    {
+      "id": "text-14",
+      "type": "text",
+      "x": 50,
+      "y": 675,
+      "text": "실행 경로 분리 ≠ 연결 풀·DB 부하 분리",
+      "fontSize": 22,
+      "fontFamily": 5,
+      "strokeColor": "#222222",
+      "textAlign": "left",
+      "roughness": 1
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": null
+  },
+  "files": {}
+}
