@@ -2,7 +2,7 @@
 title: "평가를 줄였더니 예측이 틀어졌다. 그래서 저장 구조를 나눴다"
 description: "쌓이는 평가 결과를 줄이려다 예측값이 달라진 원인을 찾고, 정확도 입력은 유지한 채 PostgreSQL 저장 비용을 줄인 과정"
 date: 2026-10-20
-modified: 2026-10-22
+modified: 2026-10-20
 draft: false
 area: hard-skill
 category: "성능·확장성"
