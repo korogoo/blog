@@ -32,13 +32,7 @@ export default ((options: AreaLandingOptions) => {
           {posts.length > 0 ? (
             <div class="browse-post-grid">
               {posts.map((post, index) => (
-                <PostCard
-                  page={post}
-                  index={index}
-                  cfg={cfg}
-                  currentSlug={fileData.slug!}
-                  headingLevel={2}
-                />
+                <PostCard page={post} index={index} currentSlug={fileData.slug!} headingLevel={2} />
               ))}
             </div>
           ) : (

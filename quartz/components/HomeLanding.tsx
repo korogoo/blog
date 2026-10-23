@@ -2,11 +2,12 @@
 import script from "./scripts/homeLanding.inline"
 import { QuartzPluginData } from "../plugins/vfile"
 import { FullSlug, resolveRelative } from "../util/path"
-import { formatDate, getDate } from "./Date"
+import { formatDate } from "./Date"
 import { EditorialArtwork, artworkVariant } from "./EditorialArtwork"
 import { PrimaryNav } from "./PrimaryNav"
 import {
   displayTag,
+  getHomePostDate,
   getHomePostMeta,
   homeCategories,
   homeProjects,
@@ -39,19 +40,17 @@ function PostVisual({ slug, index }: { slug: string; index: number }) {
 export function PostCard({
   page,
   index,
-  cfg,
   currentSlug,
   headingLevel,
   filterable = false,
 }: {
   page: QuartzPluginData
   index: number
-  cfg: QuartzComponentProps["cfg"]
   currentSlug: FullSlug
   headingLevel: 2 | 3
   filterable?: boolean
 }) {
-  const date = getDate(cfg, page)
+  const date = getHomePostDate(page)
   const meta = getHomePostMeta(page)
   const postHref = resolveRelative(currentSlug, page.slug!)
 
@@ -149,7 +148,6 @@ const HomeLanding: QuartzComponent = ({ allFiles, cfg, fileData }: QuartzCompone
               <PostCard
                 page={post}
                 index={index}
-                cfg={cfg}
                 currentSlug={fileData.slug!}
                 headingLevel={2}
                 filterable

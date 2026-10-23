@@ -1,7 +1,6 @@
 import { GlobalConfiguration } from "../cfg"
 import { QuartzPluginData } from "../plugins/vfile"
 import { slugTag } from "../util/path"
-import { getDate } from "./Date"
 
 export type HomeArea = "soft-skill" | "hard-skill"
 
@@ -114,6 +113,10 @@ export function matchesHomeFilters(
   return matchesCategory && matchesProject
 }
 
+export function getHomePostDate(page: QuartzPluginData): Date | undefined {
+  return page.dates?.published
+}
+
 export function selectHomePosts(
   allFiles: QuartzPluginData[],
   cfg: GlobalConfiguration,
@@ -128,8 +131,8 @@ export function selectHomePosts(
       )
     })
     .toSorted((left, right) => {
-      const leftDate = getDate(cfg, left)?.getTime() ?? 0
-      const rightDate = getDate(cfg, right)?.getTime() ?? 0
+      const leftDate = getHomePostDate(left)?.getTime() ?? 0
+      const rightDate = getHomePostDate(right)?.getTime() ?? 0
       if (leftDate !== rightDate) return rightDate - leftDate
 
       const leftTitle = left.frontmatter?.title ?? left.slug ?? ""
