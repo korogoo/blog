@@ -1,7 +1,7 @@
 ---
 title: "S3 이관 후 DB 원본은 언제 지워도 될까?"
 description: "집계가 끝난 평가 결과를 S3로 옮기면서 재다운로드 검증, 삭제 조건 재확인, 과거 재집계를 함께 설계한 과정"
-date: 2026-10-21
+date: 2026-10-16
 modified: 2026-10-22
 draft: false
 area: hard-skill
