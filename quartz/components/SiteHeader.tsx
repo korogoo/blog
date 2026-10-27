@@ -4,11 +4,17 @@ import { PrimaryNav } from "./PrimaryNav"
 import { QuartzComponent, QuartzComponentConstructor } from "./types"
 import style from "./styles/siteHeader.scss"
 
-const SiteHeader: QuartzComponent = ({ fileData }) => {
-  return <PrimaryNav currentSlug={fileData.slug!} />
+interface SiteHeaderOptions {
+  showAreaNav?: boolean
 }
 
-SiteHeader.css = style
-SiteHeader.afterDOMLoaded = script
+export default ((options: SiteHeaderOptions = {}) => {
+  const SiteHeader: QuartzComponent = ({ fileData }) => {
+    return <PrimaryNav currentSlug={fileData.slug!} showAreaNav={options.showAreaNav} />
+  }
 
-export default (() => SiteHeader) satisfies QuartzComponentConstructor
+  SiteHeader.css = style
+  SiteHeader.afterDOMLoaded = script
+
+  return SiteHeader
+}) satisfies QuartzComponentConstructor<SiteHeaderOptions>

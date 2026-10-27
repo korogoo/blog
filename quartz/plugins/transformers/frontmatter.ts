@@ -3,7 +3,7 @@ import remarkFrontmatter from "remark-frontmatter"
 import { QuartzTransformerPlugin } from "../types"
 import yaml from "js-yaml"
 import toml from "toml"
-import { FilePath, FullSlug, getFileExtension, slugifyFilePath, slugTag } from "../../util/path"
+import { FilePath, FullSlug, getFileExtension, slugifyFilePath } from "../../util/path"
 import { QuartzPluginData } from "../vfile"
 import { i18n } from "../../i18n"
 
@@ -78,8 +78,9 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
               data.title = stem.replace(/-/g, " ")
             }
 
-            const tags = coerceToArray(coalesceAliases(data, ["tags", "tag"]))
-            if (tags) data.tags = [...new Set(tags.map((tag: string) => slugTag(tag)))]
+            // The blog does not publish tags, including tags left in older notes.
+            delete data.tags
+            delete data.tag
 
             for (const key of ["project", "area", "category", "series"] as const) {
               if (data[key] != null) {

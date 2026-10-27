@@ -8,13 +8,9 @@ interface Item {
   slug: FullSlug
   title: string
   content: string
-  tags: string[]
   [key: string]: any
 }
 
-// Can be expanded with things like "term" in the future
-type SearchType = "basic" | "tags"
-let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
 const encoder = (str: string): string[] => {
   const tokens: string[] = []
@@ -65,7 +61,6 @@ let index = new FlexSearch.Document<Item>({
   encode: encoder,
   document: {
     id: "id",
-    tag: "tags",
     index: [
       {
         field: "title",
@@ -73,10 +68,6 @@ let index = new FlexSearch.Document<Item>({
       },
       {
         field: "content",
-        tokenize: "forward",
-      },
-      {
-        field: "tags",
         tokenize: "forward",
       },
     ],
@@ -87,7 +78,6 @@ const p = new DOMParser()
 const fetchContentCache: Map<FullSlug, Element[]> = new Map()
 const contextWindowWords = 30
 const numSearchResults = 8
-const numTagResults = 5
 
 const tokenizeTerm = (term: string) => {
   const tokens = term.split(/\s+/).filter((t) => t.trim() !== "")
@@ -229,12 +219,10 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
       removeAllChildren(preview)
     }
     searchLayout.classList.remove("display-results")
-    searchType = "basic" // reset search type after closing
     searchButton.focus()
   }
 
-  function showSearch(searchTypeNew: SearchType) {
-    searchType = searchTypeNew
+  function showSearch() {
     if (sidebar) sidebar.style.zIndex = "1"
     container.classList.add("active")
     searchBar.focus()
@@ -245,16 +233,7 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     if (e.key === "k" && (e.ctrlKey || e.metaKey) && !e.shiftKey) {
       e.preventDefault()
       const searchBarOpen = container.classList.contains("active")
-      searchBarOpen ? hideSearch() : showSearch("basic")
-      return
-    } else if (e.shiftKey && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
-      // Hotkey to open tag search
-      e.preventDefault()
-      const searchBarOpen = container.classList.contains("active")
-      searchBarOpen ? hideSearch() : showSearch("tags")
-
-      // add "#" prefix for tag search
-      searchBar.value = "#"
+      searchBarOpen ? hideSearch() : showSearch()
       return
     }
 
@@ -312,41 +291,22 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     return {
       id,
       slug,
-      title: searchType === "tags" ? data[slug].title : highlight(term, data[slug].title ?? ""),
+      title: highlight(term, data[slug].title ?? ""),
       content: highlight(term, data[slug].content ?? "", true),
-      tags: highlightTags(term.substring(1), data[slug].tags),
     }
-  }
-
-  function highlightTags(term: string, tags: string[]) {
-    if (!tags || searchType !== "tags") {
-      return []
-    }
-
-    return tags
-      .map((tag) => {
-        if (tag.toLowerCase().includes(term.toLowerCase())) {
-          return `<li><p class="match-tag">#${tag}</p></li>`
-        } else {
-          return `<li><p>#${tag}</p></li>`
-        }
-      })
-      .slice(0, numTagResults)
   }
 
   function resolveUrl(slug: FullSlug): URL {
     return new URL(resolveRelative(currentSlug, slug), location.toString())
   }
 
-  const resultToHTML = ({ slug, title, content, tags }: Item) => {
-    const htmlTags = tags.length > 0 ? `<ul class="tags">${tags.join("")}</ul>` : ``
+  const resultToHTML = ({ slug, title, content }: Item) => {
     const itemTile = document.createElement("a")
     itemTile.classList.add("result-card")
     itemTile.id = slug
     itemTile.href = resolveUrl(slug).toString()
     itemTile.innerHTML = `
       <h3 class="card-title">${title}</h3>
-      ${htmlTags}
       <p class="card-description">${content}</p>
     `
     itemTile.addEventListener("click", (event) => {
@@ -439,44 +399,11 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     if (!searchLayout || !index) return
     currentSearchTerm = (e.target as HTMLInputElement).value
     searchLayout.classList.toggle("display-results", currentSearchTerm !== "")
-    searchType = currentSearchTerm.startsWith("#") ? "tags" : "basic"
-
-    let searchResults: DefaultDocumentSearchResults<Item>
-    if (searchType === "tags") {
-      currentSearchTerm = currentSearchTerm.substring(1).trim()
-      const separatorIndex = currentSearchTerm.indexOf(" ")
-      if (separatorIndex != -1) {
-        // search by title and content index and then filter by tag (implemented in flexsearch)
-        const tag = currentSearchTerm.substring(0, separatorIndex)
-        const query = currentSearchTerm.substring(separatorIndex + 1).trim()
-        searchResults = await index.searchAsync({
-          query: query,
-          // return at least 10000 documents, so it is enough to filter them by tag (implemented in flexsearch)
-          limit: Math.max(numSearchResults, 10000),
-          index: ["title", "content"],
-          tag: { tags: tag },
-        })
-        for (let searchResult of searchResults) {
-          searchResult.result = searchResult.result.slice(0, numSearchResults)
-        }
-        // set search type to basic and remove tag from term for proper highlightning and scroll
-        searchType = "basic"
-        currentSearchTerm = query
-      } else {
-        // default search by tags index
-        searchResults = await index.searchAsync({
-          query: currentSearchTerm,
-          limit: numSearchResults,
-          index: ["tags"],
-        })
-      }
-    } else if (searchType === "basic") {
-      searchResults = await index.searchAsync({
-        query: currentSearchTerm,
-        limit: numSearchResults,
-        index: ["title", "content"],
-      })
-    }
+    const searchResults: DefaultDocumentSearchResults<Item> = await index.searchAsync({
+      query: currentSearchTerm,
+      limit: numSearchResults,
+      index: ["title", "content"],
+    })
 
     const getByField = (field: string): number[] => {
       const results = searchResults.filter((x) => x.field === field)
@@ -484,19 +411,15 @@ async function setupSearch(searchElement: Element, currentSlug: FullSlug, data: 
     }
 
     // order titles ahead of content
-    const allIds: Set<number> = new Set([
-      ...getByField("title"),
-      ...getByField("content"),
-      ...getByField("tags"),
-    ])
+    const allIds: Set<number> = new Set([...getByField("title"), ...getByField("content")])
     const finalResults = [...allIds].map((id) => formatForDisplay(currentSearchTerm, id))
     await displayResults(finalResults)
   }
 
   document.addEventListener("keydown", shortcutHandler)
   window.addCleanup(() => document.removeEventListener("keydown", shortcutHandler))
-  searchButton.addEventListener("click", () => showSearch("basic"))
-  window.addCleanup(() => searchButton.removeEventListener("click", () => showSearch("basic")))
+  searchButton.addEventListener("click", showSearch)
+  window.addCleanup(() => searchButton.removeEventListener("click", showSearch))
   searchBar.addEventListener("input", onType)
   window.addCleanup(() => searchBar.removeEventListener("input", onType))
 
@@ -521,7 +444,6 @@ async function fillDocument(data: ContentIndex) {
         slug: slug as FullSlug,
         title: fileData.title,
         content: fileData.content,
-        tags: fileData.tags,
       }),
     )
   }
@@ -532,7 +454,10 @@ async function fillDocument(data: ContentIndex) {
 
 document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   const currentSlug = e.detail.url
-  const data = await fetchData
+  const excludedFromSearch = new Set(["index", "소개", "소프트-스킬", "하드-스킬"])
+  const data = Object.fromEntries(
+    Object.entries(await fetchData).filter(([slug]) => !excludedFromSearch.has(slug)),
+  ) as ContentIndex
   const searchElement = document.getElementsByClassName("search")
   for (const element of searchElement) {
     await setupSearch(element, currentSlug, data)

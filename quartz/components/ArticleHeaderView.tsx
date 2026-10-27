@@ -1,6 +1,5 @@
 import { formatDate, getDate } from "./Date"
-import { displayTag, getHomePostMeta } from "./homeLandingData"
-import { FullSlug, resolveRelative } from "../util/path"
+import { getHomePostMeta } from "./homeLandingData"
 import { QuartzComponent } from "./types"
 
 export const ArticleHeaderView: QuartzComponent = ({ cfg, fileData }) => {
@@ -22,17 +21,6 @@ export const ArticleHeaderView: QuartzComponent = ({ cfg, fileData }) => {
       <h1 class="article-title">{title}</h1>
       {description && <p class="article-description">{description}</p>}
       {date && <time datetime={date.toISOString()}>{formatDate(date, "ko-KR")}</time>}
-      {meta.tags.length > 0 && (
-        <ul class="article-tags" aria-label="태그">
-          {meta.tags.map((tag) => (
-            <li>
-              <a href={resolveRelative(fileData.slug!, `tags/${tag}` as FullSlug)}>
-                {displayTag(tag)}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
     </header>
   )
 }

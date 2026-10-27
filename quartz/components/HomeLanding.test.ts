@@ -3,7 +3,7 @@ import test from "node:test"
 import { QuartzPluginData } from "../plugins/vfile"
 import { artworkVariant } from "./EditorialArtwork"
 import {
-  displayTag,
+  getHomePostDate,
   getHomePostMeta,
   homeCategories,
   homeProjects,
@@ -55,8 +55,8 @@ test("getHomePostMeta normalizes a known project and category", () => {
     categoryLabel: "성능·확장성",
     project: "Salmonbus",
     projectKey: "salmonbus",
-    tags: ["db", "jpa"],
   })
+  assert.equal("tags" in meta, false)
 })
 
 test("unknown projects behave as projectless posts", () => {
@@ -102,10 +102,29 @@ test("standalone navigation pages do not appear in post listings", () => {
   )
 })
 
-test("displayTag restores common technology labels", () => {
-  assert.equal(displayTag("spring-boot"), "Spring Boot")
-  assert.equal(displayTag("jpa"), "JPA")
-  assert.equal(displayTag("postgresql"), "PostgreSQL")
+test("home cards and ordering use publication dates, not modification dates", () => {
+  const olderPublished = {
+    ...post("salmonbus-s3-migration-verification-recovery", { title: "S3 이관" }),
+    dates: {
+      published: new Date("2026-10-16T00:00:00+09:00"),
+      modified: new Date("2026-10-22T00:00:00+09:00"),
+    },
+  } as QuartzPluginData
+  const newerPublished = {
+    ...post("salmonbus-db-storage-page-io", { title: "DB 저장" }),
+    dates: {
+      published: new Date("2026-10-20T00:00:00+09:00"),
+      modified: new Date("2026-10-20T00:00:00+09:00"),
+    },
+  } as QuartzPluginData
+
+  assert.equal(getHomePostDate(olderPublished), olderPublished.dates?.published)
+  assert.deepEqual(
+    selectHomePosts([olderPublished, newerPublished], { locale: "ko-KR" } as never).map(
+      (page) => page.slug,
+    ),
+    ["salmonbus-db-storage-page-io", "salmonbus-s3-migration-verification-recovery"],
+  )
 })
 
 test("post summaries stay compact and normalize whitespace", () => {

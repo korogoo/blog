@@ -6,7 +6,6 @@ import navStyle from "./styles/siteHeader.scss"
 
 interface AreaLandingOptions {
   area: HomeArea
-  eyebrow: string
   title: string
   description: string
 }
@@ -22,23 +21,15 @@ export default ((options: AreaLandingOptions) => {
         <HomeNav currentSlug={fileData.slug!} />
 
         <header class="area-page-intro">
-          <p class="post-kicker">{options.eyebrow}</p>
-          <h1>{options.title}</h1>
           <p>{options.description}</p>
-          <span>{posts.length}개의 글</span>
+          <p class="area-post-count">{posts.length}개의 글</p>
         </header>
 
         <section class="area-posts" aria-label={`${options.title} 글 목록`}>
           {posts.length > 0 ? (
             <div class="browse-post-grid">
               {posts.map((post, index) => (
-                <PostCard
-                  page={post}
-                  index={index}
-                  cfg={cfg}
-                  currentSlug={fileData.slug!}
-                  headingLevel={2}
-                />
+                <PostCard page={post} index={index} currentSlug={fileData.slug!} headingLevel={2} />
               ))}
             </div>
           ) : (

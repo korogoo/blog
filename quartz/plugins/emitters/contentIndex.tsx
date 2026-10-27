@@ -108,7 +108,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
             filePath: file.data.relativePath!,
             title: file.data.frontmatter?.title!,
             links: file.data.links ?? [],
-            tags: file.data.frontmatter?.tags ?? [],
+            tags: [], // Keep Quartz's index schema without publishing legacy source tags.
             content: file.data.text ?? "",
             richContent: opts?.rssFullHtml
               ? escapeHTML(toHtml(tree as Root, { allowDangerousHtml: true }))

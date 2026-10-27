@@ -212,25 +212,6 @@
               }
             }
 
-            & > ul.tags {
-              margin-top: 0.45rem;
-              margin-bottom: 0;
-            }
-
-            & > ul > li > p {
-              border-radius: 8px;
-              background-color: var(--highlight);
-              padding: 0.2rem 0.4rem;
-              margin: 0 0.1rem;
-              line-height: 1.4rem;
-              font-weight: $boldWeight;
-              color: var(--secondary);
-
-              &.match-tag {
-                color: var(--tertiary);
-              }
-            }
-
             & > p {
               margin-bottom: 0;
             }

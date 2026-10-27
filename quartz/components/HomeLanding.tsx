@@ -2,11 +2,11 @@
 import script from "./scripts/homeLanding.inline"
 import { QuartzPluginData } from "../plugins/vfile"
 import { FullSlug, resolveRelative } from "../util/path"
-import { formatDate, getDate } from "./Date"
+import { formatDate } from "./Date"
 import { EditorialArtwork, artworkVariant } from "./EditorialArtwork"
 import { PrimaryNav } from "./PrimaryNav"
 import {
-  displayTag,
+  getHomePostDate,
   getHomePostMeta,
   homeCategories,
   homeProjects,
@@ -39,19 +39,17 @@ function PostVisual({ slug, index }: { slug: string; index: number }) {
 export function PostCard({
   page,
   index,
-  cfg,
   currentSlug,
   headingLevel,
   filterable = false,
 }: {
   page: QuartzPluginData
   index: number
-  cfg: QuartzComponentProps["cfg"]
   currentSlug: FullSlug
   headingLevel: 2 | 3
   filterable?: boolean
 }) {
-  const date = getDate(cfg, page)
+  const date = getHomePostDate(page)
   const meta = getHomePostMeta(page)
   const postHref = resolveRelative(currentSlug, page.slug!)
 
@@ -82,20 +80,11 @@ export function PostCard({
           </h3>
         )}
         {postDescription(page) && <p class="post-description">{postDescription(page)}</p>}
-        <div class="post-footer">
-          {meta.tags.length > 0 && (
-            <ul class="post-tag-links" aria-label={`${postTitle(page)} 태그`}>
-              {meta.tags.map((tag) => (
-                <li>
-                  <a href={resolveRelative(currentSlug, `tags/${tag}` as FullSlug)}>
-                    {displayTag(tag)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-          {date && <time datetime={date.toISOString()}>{formatDate(date, "ko-KR")}</time>}
-        </div>
+        {date && (
+          <div class="post-footer">
+            <time datetime={date.toISOString()}>{formatDate(date, "ko-KR")}</time>
+          </div>
+        )}
       </div>
     </article>
   )
@@ -149,7 +138,6 @@ const HomeLanding: QuartzComponent = ({ allFiles, cfg, fileData }: QuartzCompone
               <PostCard
                 page={post}
                 index={index}
-                cfg={cfg}
                 currentSlug={fileData.slug!}
                 headingLevel={2}
                 filterable

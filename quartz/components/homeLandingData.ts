@@ -1,7 +1,6 @@
 import { GlobalConfiguration } from "../cfg"
 import { QuartzPluginData } from "../plugins/vfile"
 import { slugTag } from "../util/path"
-import { getDate } from "./Date"
 
 export type HomeArea = "soft-skill" | "hard-skill"
 
@@ -11,7 +10,6 @@ export interface HomePostMeta {
   categoryLabel: string
   project?: string
   projectKey: string
-  tags: string[]
 }
 
 export interface HomeFilterOption {
@@ -39,31 +37,8 @@ export const homeProjects: readonly HomeFilterOption[] = [
 const categoryKeys = new Map(homeCategories.map((category) => [category.label, category.value]))
 const projectLabels = new Map(homeProjects.map((project) => [project.value, project.label]))
 
-const tagLabels: Record<string, string> = {
-  db: "DB",
-  jpa: "JPA",
-  oauth2: "OAuth2",
-  oidc: "OIDC",
-  postgresql: "PostgreSQL",
-  redis: "Redis",
-  "spring-boot": "Spring Boot",
-  "spring-data-jpa": "Spring Data JPA",
-}
-
 export function filterKey(value: string): string {
   return slugTag(value.trim()).toLowerCase()
-}
-
-export function displayTag(tag: string): string {
-  const key = filterKey(tag)
-  return (
-    tagLabels[key] ??
-    key
-      .split("-")
-      .filter(Boolean)
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join(" ")
-  )
 }
 
 export function summarizePostDescription(description: string | undefined): string {
@@ -90,15 +65,12 @@ export function getHomePostMeta(page: QuartzPluginData): HomePostMeta {
   const rawProject = page.frontmatter?.project?.trim() ?? ""
   const projectKey = filterKey(rawProject)
   const project = projectLabels.get(projectKey)
-  const tags = [...new Set(page.frontmatter?.tags?.map(filterKey).filter(Boolean) ?? [])]
-
   return {
     area,
     categoryKey,
     categoryLabel: categoryKey ? rawCategory : "분류 없음",
     project,
     projectKey: project ? projectKey : "",
-    tags,
   }
 }
 
@@ -112,6 +84,10 @@ export function matchesHomeFilters(
     !selectedProject ||
     (selectedProject === "none" ? meta.projectKey === "" : meta.projectKey === selectedProject)
   return matchesCategory && matchesProject
+}
+
+export function getHomePostDate(page: QuartzPluginData): Date | undefined {
+  return page.dates?.published
 }
 
 export function selectHomePosts(
@@ -128,8 +104,8 @@ export function selectHomePosts(
       )
     })
     .toSorted((left, right) => {
-      const leftDate = getDate(cfg, left)?.getTime() ?? 0
-      const rightDate = getDate(cfg, right)?.getTime() ?? 0
+      const leftDate = getHomePostDate(left)?.getTime() ?? 0
+      const rightDate = getHomePostDate(right)?.getTime() ?? 0
       if (leftDate !== rightDate) return rightDate - leftDate
 
       const leftTitle = left.frontmatter?.title ?? left.slug ?? ""
