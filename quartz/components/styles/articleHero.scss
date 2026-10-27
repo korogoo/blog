@@ -214,13 +214,58 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
 
 @media (max-width: 640px) {
   .article-header {
-    margin: 1rem 0 2.5rem;
+    --editorial-muted: #45535f;
+    margin: 0.75rem 0 2rem;
   }
 
   .article-header .article-title {
-    font-size: 2rem;
+    font-size: 1.625rem;
+    font-weight: 600;
+    -webkit-text-stroke: 0.01em currentColor;
+    line-height: 1.35;
     hyphens: none;
     overflow-wrap: normal;
     word-break: keep-all;
+  }
+
+  .article-description {
+    color: #35434f !important;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    -webkit-text-stroke: 0.008em currentColor;
+  }
+
+  #quartz-body:not(.home-shell) article {
+    color: #17232e;
+    font-size: 1rem;
+    line-height: 1.7;
+    // The chosen handwriting font only supplies a light face.
+    -webkit-text-stroke: 0.02em currentColor;
+
+    :is(p, li, td, dd) {
+      color: #17232e;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin: 2rem 0 1rem;
+      text-decoration-thickness: 0.2rem;
+      -webkit-text-stroke: 0.01em currentColor;
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin: 1.75rem 0 0.75rem;
+      -webkit-text-stroke: 0;
+    }
+
+    pre {
+      font-size: 0.875rem;
+      -webkit-text-stroke: 0;
+    }
   }
 }

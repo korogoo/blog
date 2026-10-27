@@ -801,6 +801,19 @@
     backdrop-filter: none;
   }
 
+  .recent-post-card h2,
+  .recent-post-card h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .post-description,
+  .area-page-intro > p {
+    color: #263744 !important;
+    font-size: 0.875rem;
+    -webkit-text-stroke: 0.008em currentColor;
+  }
+
   .post-footer {
     align-items: flex-start;
     flex-direction: column;
