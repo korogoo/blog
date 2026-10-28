@@ -59,6 +59,7 @@
 #quartz-body:not(.home-shell) article :is(p, li, td, dd) {
   color: #1d3040;
   line-height: 1.7;
+  text-wrap: wrap;
 }
 
 #quartz-body:not(.home-shell) article h2 {
@@ -219,7 +220,7 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
   }
 
   .article-header .article-title {
-    font-size: 1.625rem;
+    font-size: 1.5rem;
     font-weight: 600;
     -webkit-text-stroke: 0.01em currentColor;
     line-height: 1.35;
@@ -230,14 +231,14 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
 
   .article-description {
     color: #35434f !important;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     line-height: 1.65;
     -webkit-text-stroke: 0.008em currentColor;
   }
 
   #quartz-body:not(.home-shell) article {
     color: #17232e;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     line-height: 1.7;
     // The chosen handwriting font only supplies a light face.
     -webkit-text-stroke: 0.02em currentColor;
@@ -247,7 +248,7 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
     }
 
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 600;
       line-height: 1.5;
       margin: 2rem 0 1rem;
@@ -256,7 +257,7 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
     }
 
     h3 {
-      font-size: 1.125rem;
+      font-size: 1.0625rem;
       font-weight: 600;
       line-height: 1.5;
       margin: 1.75rem 0 0.75rem;
@@ -264,7 +265,7 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
     }
 
     pre {
-      font-size: 0.875rem;
+      font-size: 0.8125rem;
       -webkit-text-stroke: 0;
     }
   }

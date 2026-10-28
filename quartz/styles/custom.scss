@@ -601,7 +601,8 @@ li[data-task="d"] {
 
 @media (max-width: 640px) {
   #quartz-body.article-shell {
-    padding: 0 0.8rem 5rem;
+    box-sizing: border-box;
+    padding: 0 1.5rem 5rem;
 
     .page-header > .popover-hint > .search {
       top: 0.75rem;
