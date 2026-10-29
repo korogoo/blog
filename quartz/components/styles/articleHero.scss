@@ -77,7 +77,7 @@
 }
 
 #quartz-body:not(.home-shell) article h3 {
-  font-size: clamp(1.2rem, 1.55vw, 1.32rem);
+  font-size: clamp(1.25rem, 1.6vw, 1.375rem);
   font-weight: 500;
   line-height: 1.45;
 }
@@ -89,63 +89,22 @@
 }
 
 #quartz-body:not(.home-shell) article {
-  p > img,
-  p > a:has(> img) {
+  img,
+  a:has(> img) {
     display: block;
+    height: auto;
     margin-inline: 0;
     width: 75%;
   }
 
-  p > a > img {
-    display: block;
-    height: auto;
+  img[data-orientation="portrait"],
+  a:has(> img[data-orientation="portrait"]) {
+    width: 50%;
+  }
+
+  a > img,
+  a > img[data-orientation="portrait"] {
     width: 100%;
-  }
-
-  @media (max-width: 700px) {
-    p > img,
-    p > a:has(> img) {
-      width: 100%;
-    }
-  }
-}
-
-// Salmonbus 본문의 캡처는 작게, Excalidraw 도식은 크게 둔다.
-body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
-  p > img[src*="/assets/salmonbus-portfolio/"] {
-    width: 37.5%;
-  }
-
-  // 가로형 운영 그래프와 문서 캡처는 기존 본문 이미지 너비를 유지한다.
-  p
-    > img:is(
-      [src$="/11-ebs-byte-balance-20261012-16.png"],
-      [src$="/12-confluence-decision-highlight.png"],
-      [src$="/14-free-storage-space-20261012-19-crop.png"],
-      [src$="/16-pr-document-link-only.png"],
-      [src$="/17-pr-policy-difference.png"],
-      [src$="/18-watch-policy-document.png"],
-      [src$="/21-confluence-highlighted-decision.png"]
-    ) {
-    width: 75%;
-  }
-
-  p
-    > img:is(
-      [src$="-flow.png"],
-      [src$="-safe-deletion.png"],
-      [src$="-rebuild.png"],
-      [src$="-scheduling.png"],
-      [src$="-sampling-experiment.png"],
-      [src$="-workflow.png"]
-    ) {
-    width: 80%;
-  }
-
-  @media (max-width: 700px) {
-    p > img[src*="/assets/salmonbus-portfolio/"] {
-      width: 100%;
-    }
   }
 }
 
@@ -157,29 +116,11 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
   }
 
   h3 {
-    font-size: clamp(1.2rem, 1.55vw, 1.32rem);
+    font-size: clamp(1.25rem, 1.6vw, 1.375rem);
     font-weight: 500;
     line-height: 1.4;
     margin-top: 2.2rem;
     word-break: keep-all;
-  }
-
-  p > a:has(> img) {
-    display: block;
-    margin-inline: 0;
-    width: 66.667%;
-  }
-
-  p > a > img {
-    display: block;
-    height: auto;
-    width: 100%;
-  }
-
-  @media (max-width: 700px) {
-    p > a:has(> img) {
-      width: 100%;
-    }
   }
 }
 
@@ -257,7 +198,7 @@ body[data-slug^="salmonbus-"] #quartz-body:not(.home-shell) article {
     }
 
     h3 {
-      font-size: 1.0625rem;
+      font-size: 1.125rem;
       font-weight: 600;
       line-height: 1.5;
       margin: 1.75rem 0 0.75rem;

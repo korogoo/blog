@@ -66,7 +66,11 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false, parseTags: false }),
+      Plugin.ObsidianFlavoredMarkdown({
+        enableInHtmlEmbed: false,
+        parseTags: false,
+        parseArrows: false,
+      }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents({ maxDepth: 2, collapseByDefault: false }),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
