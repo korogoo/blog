@@ -1,8 +1,6 @@
 import { ComponentChildren } from "preact"
 import { htmlToJsx } from "../../util/jsx"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
-// @ts-ignore
-import imageScript from "../scripts/contentImages.inline"
 
 const Content: QuartzComponent = ({ fileData, tree }: QuartzComponentProps) => {
   if (["index", "소프트-스킬", "하드-스킬"].includes(fileData.slug ?? "")) return null
@@ -12,7 +10,5 @@ const Content: QuartzComponent = ({ fileData, tree }: QuartzComponentProps) => {
   const classString = ["popover-hint", ...classes].join(" ")
   return <article class={classString}>{content}</article>
 }
-
-Content.afterDOMLoaded = imageScript
 
 export default (() => Content) satisfies QuartzComponentConstructor

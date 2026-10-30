@@ -97,13 +97,7 @@
     width: 75%;
   }
 
-  img[data-orientation="portrait"],
-  a:has(> img[data-orientation="portrait"]) {
-    width: 50%;
-  }
-
-  a > img,
-  a > img[data-orientation="portrait"] {
+  a > img {
     width: 100%;
   }
 }
